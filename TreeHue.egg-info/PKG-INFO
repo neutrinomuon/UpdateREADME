@@ -1,3 +1,14 @@
+Metadata-Version: 2.1
+Name: TreeHue
+Version: 0.0.1
+Summary: TreeHue is a Python package for visually enhancing directory tree structures with color-coded representations.
+Home-page: https://github.com/neutrinomuon/TreeHue
+Author: Jean Gomes
+Author-email: antineutrinomuon@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
 ### TreeHue
 email: [antineutrinomuon@gmail.com](mailto:antineutrinomuon@gmail.com), [jean@astro.up.pt](mailto:jean@astro.up.pt)
 
