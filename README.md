@@ -3,6 +3,8 @@ email: [antineutrinomuon@gmail.com](mailto:antineutrinomuon@gmail.com), [jean@as
 
 last stable version: 0.0.1
 
+&Beta; distribution - The README file is not complete. Conda is not exported yet. Tutorials will be made asap.
+
 github repository: <a href='https://github.com/neutrinomuon/TreeHue/'>TreeHue</a>
 
 © Copyright ®
