@@ -59,7 +59,7 @@ Example of the TreeHue script in python
 
 <hr>
 
-#### <b>STRUCTURE OF TreeHue (Created with TreeHue</b>
+#### <b>STRUCTURE OF TreeHue (Created with TreeHue)</b>
 
 <pre>
 #################################################

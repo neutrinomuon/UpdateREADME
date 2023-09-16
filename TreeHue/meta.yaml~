@@ -1,0 +1,38 @@
+{% set name = "TreeHue" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: a5277efdabb00a3da6da8d9b263f755a80e771c829490a8e6eaff27487c2fba7
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - matplotlib
+    - numpy>=1.21.5
+    - pip
+    - python
+  run:
+    - matplotlib
+    - numpy>=1.21.5
+    - python
+
+test:
+  imports:
+    - TreeHue
+
+about:
+  home: "https://github.com/neutrinomuon/TreeHue"
+  license_file: 'LICENSE.txt'
+  summary: "Enhance your directory tree visualization with colorful representations using TreeHue, a Python package that brings vibrancy to your file system structure."
+
+extra:
+  recipe-maintainers:
+    - neutrinomuon

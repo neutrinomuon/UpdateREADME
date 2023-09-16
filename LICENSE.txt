@@ -1,0 +1,23 @@
+The LICENSE
+
+Copyright (c) Jean Gomes
+
+This software is provided "AS IS" (see DISCLAIMER below).
+
+The Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) is a type of Creative Commons license used for intellectual property. It allows others to share and use the work, but with some restrictions:
+
+- Attribution: The original creator must be credited and cited for their work.
+- NonCommercial: The work cannot be used for commercial purposes, meaning it cannot be sold, licensed, or used for profit.
+- NoDerivatives: The work cannot be modified or adapted in any way, and any derivative works created from the original work are not allowed.
+
+This type of license is often used for academic, educational, and non-profit purposes, where the primary goal is to share knowledge and ideas freely, but without allowing others to profit from it or make changes to the original work.
+
+The Attribution-NonCommercial-NoDerivatives 4.0 International (CC Y-NC-ND 4.0) is a type of Creative Commons license used for intellectual property. It allows others to share and use the work, but with some restrictions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
