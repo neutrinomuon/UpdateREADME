@@ -3,7 +3,7 @@ email: [antineutrinomuon@gmail.com](mailto:antineutrinomuon@gmail.com), [jean@as
 
 last stable version: 0.0.1
 
-&Beta; distribution - The README file is not complete. Conda is not exported yet. Tutorials will be made asap.
+In &beta; distribution phase - The README file is not complete. Conda is not exported yet. Tutorials will be made asap.
 
 github repository: <a href='https://github.com/neutrinomuon/TreeHue/'>TreeHue</a>
 
@@ -215,6 +215,24 @@ TreeHue
 Generated with tree_colored @ 2023 - © Jean Gomes
 #################################################
 </pre>
+
+<hr>
+
+#### <b>ISSUES AND CONTRIBUTIONS</b>
+
+If you encounter any issues with this project, please feel free to submit an
+issue on the GitHub repository. We appreciate your feedback and are committed
+to improving the quality of our codebase.
+
+If you'd like to contribute to this project, we welcome pull requests from the
+community. Before submitting a pull request, please make sure to fork the
+repository and create a new branch for your changes. Once your changes are
+complete, submit a pull request and we'll review your code as soon as
+possible.
+
+For any questions or concerns about contributing, please contact the project
+maintainer at antineutrinomuon@gmail.com. Thank you for your interest in
+contributing to our project!
 
 <hr>
 
