@@ -17,7 +17,7 @@ J.G. - Jean Gomes
 
 #### <b>RESUME</b>
 
-<img src="https://raw.githubusercontent.com/neutrinomuon/TreeHue/main/figures/Kinematics.png" width=120>
+<img src="https://raw.githubusercontent.com/neutrinomuon/TreeHue/main/figures/TreeHue.png" width=120>
 
 Enhance your directory tree visualization with colorful representations using
 TreeHue, a Python package that brings vibrancy to your file system structure.
