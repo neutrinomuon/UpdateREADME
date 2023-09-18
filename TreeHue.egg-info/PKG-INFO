@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: TreeHue
-Version: 0.0.1
+Version: 0.0.2
 Summary: TreeHue is a Python package for visually enhancing directory tree structures with color-coded representations.
 Home-page: https://github.com/neutrinomuon/TreeHue
 Author: Jean Gomes
@@ -13,7 +13,9 @@ License-File: LICENSE.txt
 ### TreeHue
 email: [antineutrinomuon@gmail.com](mailto:antineutrinomuon@gmail.com), [jean@astro.up.pt](mailto:jean@astro.up.pt)
 
-last stable version: 0.0.1
+last stable version: 0.0.2
+
+In &beta; distribution phase - The README file is not complete. Conda is not exported yet. Tutorials will be made asap.
 
 github repository: <a href='https://github.com/neutrinomuon/TreeHue/'>TreeHue</a>
 
@@ -29,7 +31,7 @@ J.G. - Jean Gomes
 
 #### <b>RESUME</b>
 
-<img src="https://raw.githubusercontent.com/neutrinomuon/TreeHue/main/figures/Kinematics.png" width=120>
+<img src="https://raw.githubusercontent.com/neutrinomuon/TreeHue/main/figures/TreeHue.png" width=120>
 
 Enhance your directory tree visualization with colorful representations using
 TreeHue, a Python package that brings vibrancy to your file system structure.
@@ -225,6 +227,24 @@ TreeHue
 Generated with tree_colored @ 2023 - © Jean Gomes
 #################################################
 </pre>
+
+<hr>
+
+#### <b>ISSUES AND CONTRIBUTIONS</b>
+
+If you encounter any issues with this project, please feel free to submit an
+issue on the GitHub repository. We appreciate your feedback and are committed
+to improving the quality of our codebase.
+
+If you'd like to contribute to this project, we welcome pull requests from the
+community. Before submitting a pull request, please make sure to fork the
+repository and create a new branch for your changes. Once your changes are
+complete, submit a pull request and we'll review your code as soon as
+possible.
+
+For any questions or concerns about contributing, please contact the project
+maintainer at antineutrinomuon@gmail.com. Thank you for your interest in
+contributing to our project!
 
 <hr>
 

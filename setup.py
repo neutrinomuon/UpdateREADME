@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup( name='TreeHue',
-       version='0.0.1',
+       version='0.0.2',
        description='TreeHue is a Python package for visually enhancing directory tree structures with color-coded representations.',
        long_description=long_description,      # Long description read from the the readme file
        long_description_content_type="text/markdown",
