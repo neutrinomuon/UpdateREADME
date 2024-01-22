@@ -2,7 +2,7 @@
 
 echo "================================================================="
 
-python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./')"
+#python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./')"
 python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./',save_to_file='tree.out')"
 
 #TOKEN=$1
@@ -73,7 +73,7 @@ if [[ "$UPDATED_CONTENT" =~ "#### <b>STRUCTURE" ]]; then
 else
     # Create the STRUCTURE markdown
     TREE_CONTENT=$(cat tree.out)
-    UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/last stable version: $NEW_VERSION/a\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`\n#################################################" )
+    #UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/last stable version: $NEW_VERSION/a\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`\n#################################################" )
 fi
 
 # Encode the updated content
