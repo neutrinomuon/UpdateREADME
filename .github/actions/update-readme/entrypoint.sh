@@ -3,6 +3,7 @@
 echo "================================================================="
 
 python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./')"
+python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./',save_to_file='tree.out')"
 
 #TOKEN=$1
 #FILE_PATH=$2
@@ -63,6 +64,17 @@ FILE_CONTENT=$(echo "$FILE_CONTENT" | base64 -d)
 # Update the file content with the new version
 NEW_VERSION=$(cat version.txt)
 UPDATED_CONTENT=$(echo "$FILE_CONTENT" | sed "s/last stable version: .*/last stable version: $NEW_VERSION/")
+
+# Check if STRUCTURE markdown exists
+if [[ "$UPDATED_CONTENT" =~ "#### <b>STRUCTURE" ]]; then
+    # Update the STRUCTURE markdown
+    TREE_CONTENT=$(cat tree.out)
+    UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/#### <b>STRUCTURE/,/#################################################/c\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`\n#################################################" )
+else
+    # Create the STRUCTURE markdown
+    TREE_CONTENT=$(cat tree.out)
+    UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/last stable version: $NEW_VERSION/a\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`\n#################################################" )
+fi
 
 # Encode the updated content
 UPDATED_CONTENT=$(echo -n "$UPDATED_CONTENT" | base64)
