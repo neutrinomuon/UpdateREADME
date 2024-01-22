@@ -1,0 +1,32 @@
+name: Update README.md from repository
+
+on: 
+  push:
+    paths-ignore:
+        - 'update_readme.yml'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Checkout TOKEN
+        run: echo "TOKEN=${{ secrets.TOKENACTION }}" >> $GITHUB_ENV
+
+      - name: Set Branch and Repository Variables
+        id: set-vars
+        run: |
+          echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+
+      - name: Use custom action in update readme
+        uses: ./.github/actions/update-readme
+        with:
+          TOKEN: ${{ env.TOKEN }}
+          BRANCH: ${{ env.BRANCH }}
+          REPOSITORY: ${{ env.REPOSITORY }}
+          FILE: 'README.md'
+          COMMIT_MESSAGE: 'Update README with new version'

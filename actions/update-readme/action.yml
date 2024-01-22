@@ -1,0 +1,39 @@
+name: 'Update README'
+
+description: 'Update README with new version'
+
+runs:
+  using: 'docker'
+  image: 'dockerfile'
+
+inputs:
+  TOKEN:
+    description: 'GitHub Token'
+    required: true
+
+  BRANCH:
+    description: 'Branch to update'
+    required: true
+
+  REPOSITORY:
+    description: 'Repository to update'
+    required: true
+
+  FILE:
+    description: 'File to be updated'
+    required: true
+
+  COMMIT_MESSAGE:
+    description: 'Commit message'
+    required: true
+
+outputs:
+  updatedContent:
+    description: 'Updated content of the file'
+
+branding:
+  icon: 'refresh-cw'
+  color: 'blue'
+
+container:
+  image: 'dockerfile'
