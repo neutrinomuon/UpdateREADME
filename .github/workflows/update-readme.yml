@@ -3,7 +3,7 @@ name: Update README.md from repository
 on: 
   push:
     paths-ignore:
-        - 'update_readme.yml'
+        - '.github/workflows/update-readme.yml'
         - 'README.md'
 
 jobs:
