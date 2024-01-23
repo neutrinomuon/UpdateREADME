@@ -1,0 +1,109 @@
+#################################################
+UpdateREADME
+├── README.md
+├── .github
+│   ├── workflows
+│   │   └── update-readme.yml
+│   └── actions
+│       └── update-readme
+│           ├── dockerfile
+│           ├── entrypoint.sh
+│           └── action.yml
+├── version.txt
+├── .git
+│   ├── config
+│   ├── objects
+│   │   ├── 9e
+│   │   │   └── 59e1457e88abae2e4440f453293ae9f240ba44
+│   │   ├── 04
+│   │   │   └── 1648b63969e9cc6bc47e058e2047cfbc779116
+│   │   ├── 94
+│   │   │   └── 48dd4332687e99c4a4ab56f610aff4ee1f7f10
+│   │   ├── 33
+│   │   │   └── 72d204f8827998339bf4ea81f19d16faec25ce
+│   │   ├── 9c
+│   │   │   ├── 42449d3c7319a94e908938acfa8c270ad45651
+│   │   │   └── 04696518abf6c7b7e509c4d4c88509e93a5b02
+│   │   ├── b2
+│   │   │   └── 84daf46e2ff15b6ce55039dad30f258cb582b1
+│   │   ├── d8
+│   │   │   └── 958d664cb6a8dfa4218beed83cc393f9e0d255
+│   │   ├── fd
+│   │   │   └── 4d99ef345423776cab2275611fe025f89e86d8
+│   │   ├── pack
+│   │   │   ├── pack-f7325f7f2fcadcf5891bf901f7718643ef8e2f46.rev
+│   │   │   ├── pack-f7325f7f2fcadcf5891bf901f7718643ef8e2f46.pack
+│   │   │   └── pack-f7325f7f2fcadcf5891bf901f7718643ef8e2f46.idx
+│   │   ├── 7c
+│   │   │   ├── aab852d036c033378ba8a7180d0d3550f9622d
+│   │   │   └── 4f02da2f36e6f9a80f8c5439d57ebc6cfeb9a2
+│   │   ├── 87
+│   │   │   └── e69dea91c358401b2cd505101956b7c338e067
+│   │   ├── 10
+│   │   │   └── 2a02135cec30115d0783a23fcebfddc415b3df
+│   │   ├── 4d
+│   │   │   └── 0a145e704e6db5813f5084d014228c85581090
+│   │   ├── 00
+│   │   │   └── 8c2db19750eb994d721549cccbe24784740139
+│   │   ├── info
+│   │   ├── 62
+│   │   │   └── 89865f8b02b93c9df7a8922582ebce158446c3
+│   │   ├── 3a
+│   │   │   └── 7d71bf5b7e336a51157ec5853a683aadd17854
+│   │   ├── 37
+│   │   │   └── 4a7f035756305c2da470479c8a6ed04ad62e79
+│   │   ├── aa
+│   │   │   └── a43f6ac8898b688d61bb26cfce11ec645a8902
+│   │   ├── a8
+│   │   │   └── 78204e3c742c9b4cadbca2b0e2769d96590a08
+│   │   ├── e7
+│   │   │   └── fc06cbef19cbe07fa2e4cf72bfee7df15b7f4d
+│   │   ├── 23
+│   │   │   └── f30bc5c1be03bf7508c5f0f57010b23f6fe27e
+│   │   ├── 8c
+│   │   │   └── 5cac5b415927445cc567a56c8846b7e0f5e290
+│   │   └── 8b
+│   │       └── 9928185ac110af84c071e4983917f3d4307786
+│   ├── HEAD
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── main
+│   │       └── remotes
+│   │           └── origin
+│   │               └── HEAD
+│   ├── description
+│   ├── hooks
+│   │   ├── commit-msg.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── sendemail-validate.sample
+│   │   ├── pre-commit.sample
+│   │   ├── applypatch-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-push.sample
+│   │   ├── update.sample
+│   │   └── push-to-checkout.sample
+│   ├── refs
+│   │   ├── heads
+│   │   │   └── main
+│   │   ├── tags
+│   │   └── remotes
+│   │       └── origin
+│   │           └── HEAD
+│   ├── index
+│   ├── packed-refs
+│   └── COMMIT_EDITMSG
+└── LICENSE.txt
+
+172 directories, 395 files
+#################################################
+Generated with tree_colored @ 2023 - © Jean Gomes
+#################################################

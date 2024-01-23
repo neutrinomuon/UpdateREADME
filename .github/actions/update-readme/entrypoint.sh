@@ -4,6 +4,7 @@ echo "================================================================="
 
 #python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./')"
 python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./',save_to_file='tree.out')"
+cat tree.out | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" > tree1.out
 
 #TOKEN=$1
 #FILE_PATH=$2
@@ -66,7 +67,7 @@ NEW_VERSION=$(cat version.txt)
 UPDATED_CONTENT=$(echo "$FILE_CONTENT" | sed "s/last stable version: .*/last stable version: $NEW_VERSION/")
 
 # Read the content of tree.out file
-TREE_CONTENT=$(cat tree.out)
+TREE_CONTENT=$(cat tree1.out)
 echo ""
 echo "TREE_CONTENT DEBUG"
 echo "$TREE_CONTENT"
@@ -87,11 +88,16 @@ echo "$TREE_CONTENT"
 # </pre>"
 # fi
 
-UPDATED_CONTENT="$UPDATED_CONTENT
+# Check if README.md already contains a STRUCTURE section                                                                                                                                     
+if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE</b>" ]]; then
+    UPDATED_CONTENT="$UPDATED_CONTENT"
+else
+    UPDATED_CONTENT="$UPDATED_CONTENT
 #### <b>STRUCTURE</b>
 <pre>
 $TREE_CONTENT
 </pre>"
+fi
 
 # Encode the updated content
 UPDATED_CONTENT=$(echo -n "$UPDATED_CONTENT" | base64)
