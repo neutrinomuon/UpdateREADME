@@ -4,7 +4,10 @@ echo "================================================================="
 
 #python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./')"
 python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./',save_to_file='tree.out')"
-cat tree.out | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" > tree1.out
+
+# cat tree.out | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" > tree1.out
+#     ^------^ SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
+sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" tree.out > tree1.out
 
 #TOKEN=$1
 #FILE_PATH=$2
@@ -64,7 +67,12 @@ FILE_CONTENT=$(echo "$FILE_CONTENT" | base64 -d)
 
 # Update the file content with the new version
 NEW_VERSION=$(cat version.txt)
-UPDATED_CONTENT=$(echo "$FILE_CONTENT" | sed "s/last stable version: .*/last stable version: $NEW_VERSION/")
+
+# UPDATED_CONTENT=$(echo "$FILE_CONTENT" | sed "s/last stable version: .*/last stable version: $NEW_VERSION/")
+#                   ^-- SC2001 (style): See if you can use ${variable//search/replace} instead.
+
+# UPDATED_CONTENT=$(echo "$FILE_CONTENT" | sed "s/last stable version: .*/last stable version: $NEW_VERSION/")
+UPDATED_CONTENT=$(echo "$FILE_CONTENT" | sed "/last stable version:/s/.*/last stable version: $NEW_VERSION/")
 
 # Read the content of tree.out file
 TREE_CONTENT=$(cat tree1.out)

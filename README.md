@@ -9,7 +9,7 @@ J.G. - Jean Gomes
 
 last stable version: 0.0.1
 
-Update the README.md file with the version number and add the directory STRUCTURE automatically to your repository when you have a new push.
+RESUME: Automatically updates the README.md file with the latest version number and dynamically adds the directory structure section to your repository upon each new push. This workflow enhances project documentation by showcasing the directory structure in an automated and organized manner.
 
 <hr>
 
