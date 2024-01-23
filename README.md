@@ -13,7 +13,7 @@ Update the README.md file with the version number and add the directory STRUCTUR
 
 <hr>
 
-#### <b>STRUCTURE</b>
+#### <b>STRUCTURE of UpdateREADME</b>
 <pre>
 #################################################
 workspace

@@ -72,25 +72,27 @@ echo ""
 echo "TREE_CONTENT DEBUG"
 echo "$TREE_CONTENT"
 
-# Check if README.md already contains a STRUCTURE section
-# if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE</b>" ]]; then
-#     # If it exists, replace the content within <pre></pre> with tree.out
-#     UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed -n -e '/#### <b>STRUCTURE<\/b>/,/<\/pre>/p' | sed -e "/#### <b>STRUCTURE<\/b>/,/<\/pre>/c\\#### <b>STRUCTURE<\/b>
-# <pre>
-# $TREE_CONTENT
-# <\/pre>")
-# else
-#     # If it doesn't exist, append a new STRUCTURE section at the end
-#     UPDATED_CONTENT="$UPDATED_CONTENT
-# #### <b>STRUCTURE</b>
-# <pre>
-# $TREE_CONTENT
-# </pre>"
-# fi
-
 # Check if README.md already contains a STRUCTURE section                                                                                                                                     
 if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE</b>" ]]; then
-    UPDATED_CONTENT="$UPDATED_CONTENT"
+    UPDATED_CONTENT=$(awk '
+/#### <b>STRUCTURE[^<]*<\/b>/,/\<\/pre>/ {
+    if (/#### <b>STRUCTURE[^<]*<\/b>/) {
+        print $0
+        print "<pre>"
+        while ((getline line < "tree1.out") > 0) {
+            print line
+        }
+        in_block = 1
+        next
+    }
+    if (/<\/pre>/) {
+        in_block = 0
+        next
+    }
+    if (in_block) next
+}
+{ print }
+' $UPDATED_CONTENT)
 else
     UPDATED_CONTENT="$UPDATED_CONTENT
 
