@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Disable cache for this step
-        run: echo "::set-env name=CACHE_DISABLED::true"
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
