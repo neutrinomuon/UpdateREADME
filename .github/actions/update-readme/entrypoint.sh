@@ -87,6 +87,9 @@ if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE" ]]; then
     }
     if (/<\/pre>/) {
         in_block = 0
+	print "</pre>"
+	print ""
+        print "<hr>"
         next
     }
     if (in_block) next
