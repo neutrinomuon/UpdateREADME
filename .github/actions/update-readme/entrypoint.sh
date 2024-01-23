@@ -67,22 +67,25 @@ UPDATED_CONTENT=$(echo "$FILE_CONTENT" | sed "s/last stable version: .*/last sta
 
 # Read the content of tree.out file
 TREE_CONTENT=$(cat tree.out)
+echo ""
+echo "TREE_CONTENT DEBUG"
+echo "$TREE_CONTENT"
 
 # Check if README.md already contains a STRUCTURE section
-if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE</b>" ]]; then
-    # If it exists, replace the content within <pre></pre> with tree.out
-    UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed -n -e '/#### <b>STRUCTURE<\/b>/,/<\/pre>/p' | sed -e "/#### <b>STRUCTURE<\/b>/,/<\/pre>/c\\#### <b>STRUCTURE<\/b>
-<pre>
-$TREE_CONTENT
-<\/pre>")
-else
-    # If it doesn't exist, append a new STRUCTURE section at the end
-    UPDATED_CONTENT="$UPDATED_CONTENT
-#### <b>STRUCTURE</b>
-<pre>
-$TREE_CONTENT
-</pre>"
-fi
+# if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE</b>" ]]; then
+#     # If it exists, replace the content within <pre></pre> with tree.out
+#     UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed -n -e '/#### <b>STRUCTURE<\/b>/,/<\/pre>/p' | sed -e "/#### <b>STRUCTURE<\/b>/,/<\/pre>/c\\#### <b>STRUCTURE<\/b>
+# <pre>
+# $TREE_CONTENT
+# <\/pre>")
+# else
+#     # If it doesn't exist, append a new STRUCTURE section at the end
+#     UPDATED_CONTENT="$UPDATED_CONTENT
+# #### <b>STRUCTURE</b>
+# <pre>
+# $TREE_CONTENT
+# </pre>"
+# fi
 
 # Encode the updated content
 UPDATED_CONTENT=$(echo -n "$UPDATED_CONTENT" | base64)
