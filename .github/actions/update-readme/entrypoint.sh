@@ -87,6 +87,12 @@ echo "$TREE_CONTENT"
 # </pre>"
 # fi
 
+UPDATED_CONTENT="$UPDATED_CONTENT
+#### <b>STRUCTURE</b>
+<pre>
+$TREE_CONTENT
+</pre>"
+
 # Encode the updated content
 UPDATED_CONTENT=$(echo -n "$UPDATED_CONTENT" | base64)
 
