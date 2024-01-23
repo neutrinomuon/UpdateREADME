@@ -93,10 +93,15 @@ if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE</b>" ]]; then
     UPDATED_CONTENT="$UPDATED_CONTENT"
 else
     UPDATED_CONTENT="$UPDATED_CONTENT
+
+<hr>
+
 #### <b>STRUCTURE</b>
 <pre>
 $TREE_CONTENT
-</pre>"
+</pre>
+
+<hr>"
 fi
 
 # Encode the updated content
