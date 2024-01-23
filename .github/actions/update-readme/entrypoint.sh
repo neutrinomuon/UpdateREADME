@@ -128,28 +128,32 @@ $TREE_CONTENT
 <hr>"
 fi
 
-# Encode the updated content
-UPDATED_CONTENT=$(echo -n "$UPDATED_CONTENT" | base64)
+if [ "$UPDATED_CONTENT" != "$FILE_CONTENT" ]; then
+    echo
+    echo "FILE_CONTENT is not equal to UPDATED_CONTENT"
+    # Encode the updated content
+    UPDATED_CONTENT=$(echo -n "$UPDATED_CONTENT" | base64)
 
-# Print debug information
-echo "TOKEN: $TOKEN"
-echo "NEW_VERSION: $NEW_VERSION"
-echo "COMMIT_SHA: $COMMIT_SHA"
-echo "FILE_SHA: $FILE_SHA"
+    # Print debug information
+    echo "TOKEN: $TOKEN"
+    echo "NEW_VERSION: $NEW_VERSION"
+    echo "COMMIT_SHA: $COMMIT_SHA"
+    echo "FILE_SHA: $FILE_SHA"
 
-# Prepare the JSON data
-JSON_DATA=$(jq -n --arg message "$COMMIT_MESSAGE" --arg content "$UPDATED_CONTENT" --arg branch "$BRANCH" --arg sha "$FILE_SHA" \
-  '{message: $message, content: $content, branch: $branch, sha: $sha}')
+    # Prepare the JSON data
+    JSON_DATA=$(jq -n --arg message "$COMMIT_MESSAGE" --arg content "$UPDATED_CONTENT" --arg branch "$BRANCH" --arg sha "$FILE_SHA" \
+	       '{message: $message, content: $content, branch: $branch, sha: $sha}')
 
-# Update the file on GitHub
-RESPONSE=$(curl -s -X PUT \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Accept: application/vnd.github+json" \
-  -H "X-GitHub-Api-Version: 2022-11-28" \
-  -d "$JSON_DATA" \
-  "https://api.github.com/repos/$REPOSITORY/contents/$FILE_PATH")
+    # Update the file on GitHub
+    RESPONSE=$(curl -s -X PUT \
+		    -H "Authorization: Bearer $TOKEN" \
+		    -H "Accept: application/vnd.github+json" \
+		    -H "X-GitHub-Api-Version: 2022-11-28" \
+		    -d "$JSON_DATA" \
+		    "https://api.github.com/repos/$REPOSITORY/contents/$FILE_PATH")
 
-echo "$RESPONSE"
+    echo "$RESPONSE"
+fi
 echo "================================================================="
 
 
