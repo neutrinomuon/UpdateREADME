@@ -92,7 +92,7 @@ if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE" ]]; then
     if (in_block) next
 }
 { print }
-' $UPDATE_CONTENT)
+' <<< "$UPDATED_CONTENT")
 else
     UPDATED_CONTENT="$UPDATED_CONTENT
 
