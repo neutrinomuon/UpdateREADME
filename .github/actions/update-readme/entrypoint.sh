@@ -69,11 +69,13 @@ UPDATED_CONTENT=$(echo "$FILE_CONTENT" | sed "s/last stable version: .*/last sta
 if [[ "$UPDATED_CONTENT" =~ "#### <b>STRUCTURE" ]]; then
     # Update the STRUCTURE markdown
     TREE_CONTENT=$(cat tree.out)
-    UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/#### <b>STRUCTURE/,/#################################################/c\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`\n#################################################" )
+    # UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/#### <b>STRUCTURE/,/#################################################/c\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`\n\)
 else
     # Create the STRUCTURE markdown
     TREE_CONTENT=$(cat tree.out)
-    #UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/last stable version: $NEW_VERSION/a\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`\n#################################################" )
+    # Append STRUCTURE markdown after the last stable version
+    UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/last stable version: $NEW_VERSION/a\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`" )
+    echo "$UPDATED_CONTENT"
 fi
 
 # Encode the updated content
