@@ -7,9 +7,9 @@ email: [antineutrinomuon@gmail.com](mailto:antineutrinomuon@gmail.com), [jean@as
 
 J.G. - Jean Gomes
 
-last stable version: 0.0.1
+last stable version: 0.0.0
 
-Update the README.md file with the version number and add the directory STRUCTURE automatically to your repository when you have a new push. 
+Update the README.md file with the version number and add the directory STRUCTURE automatically to your repository when you have a new push.
 
 <hr>
 
