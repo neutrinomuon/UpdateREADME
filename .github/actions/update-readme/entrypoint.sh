@@ -74,7 +74,7 @@ echo "$TREE_CONTENT"
 
 # Check if README.md already contains a STRUCTURE section                                                                                                                                     
 if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE" ]]; then
-    UPDATED_CONTENT=$(awk '
+    UPDATED_CONTENT_NEW=$(awk '
 /#### <b>STRUCTURE[^<]*<\/b>/,/\<\/pre>/ {
     if (/#### <b>STRUCTURE[^<]*<\/b>/) {
         print $0
@@ -93,6 +93,17 @@ if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE" ]]; then
 }
 { print }
 ' <<< "$UPDATED_CONTENT")
+
+    # Check if UPDATED_CONTENT_NEW is different from UPDATED_CONTENT
+    if [ "$UPDATED_CONTENT_NEW" != "$UPDATED_CONTENT" ]; then
+	# If different, update UPDATED_CONTENT
+	UPDATED_CONTENT="$UPDATED_CONTENT_NEW"
+	# Perform additional actions if needed
+	echo "Content updated"
+    else
+	# If not different, do nothing
+	echo "Content unchanged"
+
 else
     UPDATED_CONTENT="$UPDATED_CONTENT
 
