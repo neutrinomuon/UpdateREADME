@@ -73,7 +73,7 @@ echo "TREE_CONTENT DEBUG"
 echo "$TREE_CONTENT"
 
 # Check if README.md already contains a STRUCTURE section                                                                                                                                     
-if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE</b>" ]]; then
+if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE" ]]; then
     UPDATED_CONTENT=$(awk '
 /#### <b>STRUCTURE[^<]*<\/b>/,/\<\/pre>/ {
     if (/#### <b>STRUCTURE[^<]*<\/b>/) {
