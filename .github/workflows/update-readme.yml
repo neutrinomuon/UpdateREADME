@@ -4,6 +4,7 @@ on:
   push:
     paths-ignore:
         - 'update_readme.yml'
+        - 'README.md'
 
 jobs:
   update-readme:
