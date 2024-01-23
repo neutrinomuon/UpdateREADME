@@ -95,11 +95,14 @@ if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE" ]]; then
 ' <<< "$UPDATED_CONTENT")
 
     # Debugging output
+    echo ""
     echo "=== UPDATED_CONTENT ==="
     echo "$UPDATED_CONTENT"
+    echo ""
     echo "=== UPDATED_CONTENT_NEW ==="
     echo "$UPDATED_CONTENT_NEW"
-    
+    echo ""
+
     # Check if UPDATED_CONTENT_NEW is different from UPDATED_CONTENT
     if [ "$UPDATED_CONTENT_NEW" != "$UPDATED_CONTENT" ]; then
 	# If different, update UPDATED_CONTENT
