@@ -7,7 +7,7 @@ email: [antineutrinomuon@gmail.com](mailto:antineutrinomuon@gmail.com), [jean@as
 
 J.G. - Jean Gomes
 
-last stable version: 0.0.0
+last stable version: 0.0.1
 
 Update the README.md file with the version number and add the directory STRUCTURE automatically to your repository when you have a new push.
 
@@ -62,32 +62,32 @@ workspace
 │   │   ├── pack
 │   │   ├── 64
 │   │   │   └── d90a53165d2a7ccf5ddabfa0b0aefa1ff95d16
-│   │   ├── 3b
-│   │   │   ├── 765cec564ead9f7e7538fcc8a42e004af45c59
-│   │   │   └── c851c6513252436b3afdc159501e15a40730fb
+│   │   ├── 26
+│   │   │   └── e39d481d2db2ee3dc903165d7a1055521c64d2
+│   │   ├── 3e
+│   │   │   └── 9eaa8ef592b9870e2887c20183cf3c9740e63b
+│   │   ├── 0a
+│   │   │   └── 41ca7dea1df45b3472c05ce4ab6455d975565a
+│   │   ├── 37
+│   │   │   └── a4bf8a792b8228a704b9781736c92b96c2010f
 │   │   ├── f2
 │   │   │   └── 2560d7ff01bb16ca145420cd54cbceee78d6d0
 │   │   ├── 9e
 │   │   │   └── 5309ef031777655a6a9e1fa9ea6f3de2147414
 │   │   ├── 8a
-│   │   │   └── cdd82b765e8e0b8cd8787f7f18c7fe2ec52493
+│   │   │   ├── cdd82b765e8e0b8cd8787f7f18c7fe2ec52493
+│   │   │   └── 8f3302f1f3d72c75b0b84ed45e3ce3dbc01938
 │   │   ├── 30
 │   │   │   └── 6e81370ed7c56923373d953f38fce36af1a91e
+│   │   ├── 81
+│   │   │   └── 9f48dee47505b0f39c3c7938e57ce2816ca237
 │   │   ├── info
-│   │   ├── 8d
-│   │   │   └── 46c9c6c467652d5c7e778d8f29b983cb2baca3
-│   │   ├── 08
-│   │   │   └── 17d894c7404613608aa04dfc12098567f42d60
 │   │   ├── a5
 │   │   │   └── 7eabd82582b9a9aa08541e88b4ff1d8b877a1a
 │   │   ├── 8b
 │   │   │   └── 5b31905455fc7fa4fcc5eb2bdaca831e851be3
-│   │   ├── 87
-│   │   │   └── ec70449ab5e6704aae68124849d6d5222d9e04
-│   │   ├── 91
-│   │   │   └── c6b2cf7bbe86ab4ac2fade9a009d1d4e329452
-│   │   ├── dd
-│   │   │   └── 8acb95a8a8c9dcaddba77e1106c973b5c16be4
+│   │   ├── f6
+│   │   │   └── 7e700453473caeb9019f742b8e91c82041f9c0
 │   │   └── e2
 │   │       └── 427cb1499bb659f7caae066552007197357fe7
 │   └── HEAD
