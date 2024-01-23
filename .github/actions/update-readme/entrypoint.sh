@@ -103,6 +103,7 @@ if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE" ]]; then
     else
 	# If not different, do nothing
 	echo "Content unchanged"
+    fi
 
 else
     UPDATED_CONTENT="$UPDATED_CONTENT
