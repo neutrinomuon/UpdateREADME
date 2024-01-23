@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Disable cache for this step
+        run: echo "::set-env name=CACHE_DISABLED::true"
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -21,9 +24,6 @@ jobs:
         run: |
           echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
-
-      - name: Disable cache for this step
-        run: echo "::set-env name=CACHE_DISABLED::true"
 
       - name: Use custom action in update readme
         uses: ./.github/actions/update-readme
