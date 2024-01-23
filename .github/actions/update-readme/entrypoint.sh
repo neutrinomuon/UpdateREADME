@@ -65,17 +65,23 @@ FILE_CONTENT=$(echo "$FILE_CONTENT" | base64 -d)
 NEW_VERSION=$(cat version.txt)
 UPDATED_CONTENT=$(echo "$FILE_CONTENT" | sed "s/last stable version: .*/last stable version: $NEW_VERSION/")
 
-# Check if STRUCTURE markdown exists
-if [[ "$UPDATED_CONTENT" =~ "#### <b>STRUCTURE" ]]; then
-    # Update the STRUCTURE markdown
-    TREE_CONTENT=$(cat tree.out)
-    # UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/#### <b>STRUCTURE/,/#################################################/c\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`\n\)
+# Read the content of tree.out file
+TREE_CONTENT=$(cat tree.out)
+
+# Check if README.md already contains a STRUCTURE section
+if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE</b>" ]]; then
+    # If it exists, replace the content within <pre></pre> with tree.out
+    UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed -n -e '/#### <b>STRUCTURE<\/b>/,/<\/pre>/p' | sed -e "/#### <b>STRUCTURE<\/b>/,/<\/pre>/c\\#### <b>STRUCTURE<\/b>
+<pre>
+$TREE_CONTENT
+<\/pre>")
 else
-    # Create the STRUCTURE markdown
-    TREE_CONTENT=$(cat tree.out)
-    # Append STRUCTURE markdown after the last stable version
-    UPDATED_CONTENT=$(echo "$UPDATED_CONTENT" | sed "/last stable version: $NEW_VERSION/a\#### <b>STRUCTURE\n\n\`\`\`\n$TREE_CONTENT\n\`\`\`" )
-    echo "$UPDATED_CONTENT"
+    # If it doesn't exist, append a new STRUCTURE section at the end
+    UPDATED_CONTENT="$UPDATED_CONTENT
+#### <b>STRUCTURE</b>
+<pre>
+$TREE_CONTENT
+</pre>"
 fi
 
 # Encode the updated content
