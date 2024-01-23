@@ -4,7 +4,6 @@ on:
   push:
     paths-ignore:
         - '.github/workflows/update-readme.yml'
-        - 'README.md'
 
 jobs:
   update-readme:
