@@ -28,8 +28,8 @@ jobs:
       - name: Set Branch and Repository Variables
         id: set-vars
         run: |
-          git config user.name $USER_NAME
-          git config user.email $USER_EMAIL
+          git config --global user.name "${USER_NAME}"
+          git config --global user.email "${USER_EMAIL}"
           echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
           echo "NAME=$(git config --get user.name)" >> $GITHUB_ENV
