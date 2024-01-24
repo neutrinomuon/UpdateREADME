@@ -21,9 +21,6 @@ jobs:
         run: |
           USER_NAME='Jean Gomes'
           USER_EMAIL='neutrinomuon@gmail.com'
-          
-          echo "::set-output name=user_name::$USER_NAME"
-          echo "::set-output name=user_email::$USER_EMAIL"
 
       - name: Set up Git Config
         run: |
@@ -40,6 +37,8 @@ jobs:
         run: |
           echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+          echo "NAME=$(git config --get user.name)" >> $GITHUB_ENV
+          echo "EMAIL=$(git config --get user.email)" >> $GITHUB_ENV
 
       - name: Use custom action in update readme
         uses: ./.github/actions/update-readme
@@ -49,5 +48,5 @@ jobs:
           REPOSITORY: ${{ env.REPOSITORY }}
           FILE: 'README.md'
           COMMIT_MESSAGE: 'Update README with new version'
-          EMAIL: ${{ env.USER_EMAIL }}
-          NAME: ${{ env.USER_NAME }}
+          EMAIL: ${{ env.EMAIL }}
+          NAME: ${{ env.NAME }}
