@@ -72,8 +72,8 @@ echo "$FILE_CONTENT" > "$TEST_FILE"
 # Check if the file ends with a newline
 if [[ -n $(tail -c 1 "$FILE_PATH" | tr -d '\n') ]]; then
     # If not, add a newline
-    echo >> "$file"
-    echo "Added newline to $file"
+    echo >> "$FILE_PATH"
+    echo "Added newline to $FILE_PATH"
 else
     echo "File $file already ends with a newline"
 fi
