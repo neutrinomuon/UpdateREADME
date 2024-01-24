@@ -164,6 +164,18 @@ if [[ $UPDATED_VERSION_CONTENT =~ "#### <b>STRUCTURE" ]]; then
 }
 { print }
 ' <<< "$UPDATED_VERSION_CONTENT")
+else
+    UPDATED_CONTENT="$UPDATED_CONTENT
+
+<hr>
+
+#### <b>STRUCTURE</b>
+<pre>
+$TREE_CONTENT
+</pre>
+
+<hr>"
+fi
 
 # Debugging output
 echo ""
