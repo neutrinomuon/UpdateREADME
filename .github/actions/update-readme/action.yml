@@ -27,14 +27,6 @@ inputs:
     description: 'Commit message'
     required: true
 
-  NAME:
-    description: 'The committer name'
-    required: true
-
-  EMAIL:
-    description: 'The committer email'
-    required: true
-
 outputs:
   updatedContent:
     description: 'Updated content of the file'
