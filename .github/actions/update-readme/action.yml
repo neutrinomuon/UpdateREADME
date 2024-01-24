@@ -1,6 +1,6 @@
-name: 'Update README'
+name: 'Update README.md file'
 
-description: 'Update README with new version'
+description: 'Update README.md with new version'
 
 runs:
   using: 'docker'
