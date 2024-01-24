@@ -15,14 +15,6 @@ jobs:
 
       - name: Install Git
         run: sudo apt-get update && sudo apt-get install git -y
-        
-      - name: Capture Git Configuration
-        id: capture_git_config
-        run: |
-          USER_NAME='Jean Gomes'
-          USER_EMAIL='neutrinomuon@gmail.com'
-          echo "NAME=${{ USER_NAME }}" >> $GITHUB_ENV
-          echo "EMAIL=${{ USER_EMAIL }}" >> $GITHUB_ENV
 
       - name: Checkout TOKEN
         run: echo "TOKEN=${{ secrets.TOKENACTION }}" >> $GITHUB_ENV
