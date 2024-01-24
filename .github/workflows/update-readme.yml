@@ -25,19 +25,18 @@ jobs:
           echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
 
-      - name: Display Git Config Variables
-        run: |
-          echo "Git User Name: ${{ env.NAME }}"
-          echo "Git User Email: ${{ env.EMAIL }}"
+#      - name: Display Git Config Variables
+#        run: |
+#          echo "Git User Name: ${{ env.NAME }}"
+#          echo "Git User Email: ${{ env.EMAIL }}"
 
-#      - name: Use custom action in update readme
-#        uses: ./.github/actions/update-readme
-#        with:
-#          TOKEN: ${{ env.TOKEN }}
-#          BRANCH: ${{ env.BRANCH }}
-#          REPOSITORY: ${{ env.REPOSITORY }}
-#          FILE: 'README.md'
-#          COMMIT_MESSAGE: 'Update README with new version'
-#          NAME: ${{ env.NAME }}
-#          EMAIL: ${{ env.EMAIL }}
+      - name: Use custom action in update readme
+        uses: ./.github/actions/update-readme
+        with:
+          TOKEN: ${{ env.TOKEN }}
+          BRANCH: ${{ env.BRANCH }}
+          REPOSITORY: ${{ env.REPOSITORY }}
+          FILE: 'README.md'
+          COMMIT_MESSAGE: 'Update README with new version'
+
           
