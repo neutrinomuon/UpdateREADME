@@ -126,7 +126,106 @@ else
     echo "Differences found in version control:"
     echo "$diff_result"
     echo "$UPDATE_VERSION_CONTENT" > "$FILE_PATH"
+    git add .
+    git commit -m "Version control needed to be updated"
 fi
+
+# Now check the structure section
+VERSION_FILE="version.txt"
+DEFAULT_VERSION="0.0.0"
+
+# Check if the file exists
+if [ -e "$VERSION_FILE" ]; then
+    # Read the content of the file into the variable
+    NEW_VERSION=$(cat "$VERSION_FILE")
+    echo "Updated the file content with the new version: $NEW_VERSION"
+else
+    # File doesn't exist, create it with the default version
+    echo "$DEFAULT_VERSION" > "$VERSION_FILE"
+    NEW_VERSION="$DEFAULT_VERSION"
+    echo "Created $VERSION_FILE with the default version: $NEW_VERSION"
+fi
+
+# Now we are going to check the version published and the current from version.txt file
+UPDATE_VERSION_CONTENT=$(echo "$FILE_CONTENT_LOCAL" | sed "/last stable version:/s/.*/last stable version: $NEW_VERSION/")
+# Print to a file called $TEST_FILE
+echo "$UPDATE_VERSION_CONTENT" > "$TEST_FILE"
+
+# Verify difference between both files for the version
+# Run diff and display the differences
+diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
+
+# Check if there are differences
+if [ $? -eq 0 ]; then
+    echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the version control."
+else
+    echo "Differences found in version control:"
+    echo "$diff_result"
+    echo "$UPDATE_VERSION_CONTENT" > "$FILE_PATH"
+fi
+
+# Read the content of tree.out file
+TREE_CONTENT=$(cat tree1.out)
+echo ""
+echo "===== TREE_CONTENT DEBUG ====="
+echo "$TREE_CONTENT"
+echo ""
+
+# ===> # Check if README.md already contains a STRUCTURE section                                                                                                                                     
+# ===> if [[ $UPDATED_CONTENT =~ "#### <b>STRUCTURE" ]]; then
+# ===>     UPDATED_CONTENT_NEW=$(awk '
+# ===> /#### <b>STRUCTURE[^<]*<\/b>/,/\<\/pre>/ {
+# ===>     if (/#### <b>STRUCTURE[^<]*<\/b>/) {
+# ===>         print $0
+# ===>         print "<pre>"
+# ===>         while ((getline line < "tree1.out") > 0) {
+# ===>             print line
+# ===>         }
+# ===>         in_block = 1
+# ===>         next
+# ===>     }
+# ===>     if (/<\/pre>/) {
+# ===>         in_block = 0
+# ===> 	print "</pre>"
+# ===>         next
+# ===>     }
+# ===>     if (in_block) next
+# ===> }
+# ===> { print }
+# ===> ' <<< "$UPDATED_CONTENT")
+# ===> 
+# ===>     # Debugging output
+# ===>     echo ""
+# ===>     echo "=== UPDATED_CONTENT ==="
+# ===>     echo "$UPDATED_CONTENT"
+# ===>     echo ""
+# ===>     echo "=== UPDATED_CONTENT_NEW ==="
+# ===>     echo "$UPDATED_CONTENT_NEW"
+# ===>     echo ""
+# ===> 
+# ===>     # Check if UPDATED_CONTENT_NEW is different from UPDATED_CONTENT
+# ===>     if [ "$UPDATED_CONTENT_NEW" != "$UPDATED_CONTENT" ]; then
+# ===> 	# If different, update UPDATED_CONTENT
+# ===> 	UPDATED_CONTENT="$UPDATED_CONTENT_NEW"
+# ===> 	# Perform additional actions if needed
+# ===> 	echo "Content updated"
+# ===>     else
+# ===> 	# If not different, do nothing
+# ===> 	echo "Content unchanged"
+# ===>     fi
+# ===> 
+# ===> else
+# ===>     UPDATED_CONTENT="$UPDATED_CONTENT
+# ===> 
+# ===> <hr>
+# ===> 
+# ===> #### <b>STRUCTURE</b>
+# ===> <pre>
+# ===> $TREE_CONTENT
+# ===> </pre>
+# ===> 
+# ===> <hr>"
+# ===> fi
 
 # Decode the file contents
 # ===> FILE_CONTENT=$(echo "$FILE_CONTENT" | base64 -d)
