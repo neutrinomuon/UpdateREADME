@@ -4,7 +4,6 @@ echo "================================================================="
 echo
 echo "NAME = ${INPUT_NAME}"
 echo "EMAIL = ${INPUT_EMAIL}"
-echo
 
 # Setup Git interface
 # Track who is using this action to update the README.md file
