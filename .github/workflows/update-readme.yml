@@ -19,10 +19,10 @@ jobs:
       - name: Capture Git Configuration
         id: capture_git_config
         run: |
-          echo "USER_NAME='Jean Gomes'" >> $GITHUB_ENV
-          echo "USER_EMAIL='neutrinomuon@gmail.com'" >> $GITHUB_ENV
+          USER_NAME='Jean Gomes'
+          USER_EMAIL='neutrinomuon@gmail.com'
           echo "NAME=${{ USER_NAME }}" >> $GITHUB_ENV
-          echo "EMAIL=${{ USER_NAME }}" >> $GITHUB_ENV
+          echo "EMAIL=${{ USER_EMAIL }}" >> $GITHUB_ENV
 
       - name: Checkout TOKEN
         run: echo "TOKEN=${{ secrets.TOKENACTION }}" >> $GITHUB_ENV
