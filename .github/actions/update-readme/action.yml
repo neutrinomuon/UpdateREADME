@@ -27,15 +27,16 @@ inputs:
     description: 'Commit message'
     required: true
 
-  EMAIL:
-    description: 'The committer email'
-    required: true
-    default: ${{ github.actor }}@localhost
-
   NAME:
     description: 'The committer name'
     required: true
-    default: ${{ github.actor }}
+    default: ${{ env.NAME }}
+
+  EMAIL:
+    description: 'The committer email'
+    required: true
+    default: ${{ env.EMAIL }}
+
 
 outputs:
   updatedContent:
