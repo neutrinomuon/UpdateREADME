@@ -87,11 +87,27 @@ diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 
 # Check if there are differences
 if [ $? -eq 0 ]; then
-    echo "The files $file and $TEST_FILE are identical."
+    echo "The files $FILE_PATH and $TEST_FILE are identical."
 else
     echo "Differences found:"
     echo "$diff_result"
     echo "$FILE_CONTENT_LOCAL" > "$FILE_PATH"
+fi
+
+# Update the file content with the new version
+VERSION_FILE="version.txt"
+DEFAULT_VERSION="0.0.0" # In case $VERSION_FILE does not exist
+
+# Check if the file exists
+if [ -e "$VERSION_FILE" ]; then
+    # Read the content of the file into the variable
+    NEW_VERSION=$(cat "$VERSION_FILE")
+    echo "Updated the file content with the new version: $NEW_VERSION"
+else
+    # File doesn't exist, create it with the default version
+    echo "$DEFAULT_VERSION" > "$VERSION_FILE"
+    NEW_VERSION="$DEFAULT_VERSION"
+    echo "Created $VERSION_FILE with the default version: $NEW_VERSION"
 fi
 
 # Now we are going to check the version published and the current from version.txt file
@@ -105,7 +121,7 @@ diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 
 # Check if there are differences
 if [ $? -eq 0 ]; then
-    echo "The files $file and $TEST_FILE are identical in what concerns the version control."
+    echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the version control."
 else
     echo "Differences found in version control:"
     echo "$diff_result"
