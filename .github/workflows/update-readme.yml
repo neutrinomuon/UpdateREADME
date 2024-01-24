@@ -19,8 +19,8 @@ jobs:
       - name: Capture Git Configuration
         id: capture_git_config
         run: |
-          USER_NAME=$(git config --get user.name)
-          USER_EMAIL=$(git config --get user.email)
+          USER_NAME='Jean Gomes'
+          USER_EMAIL='neutrinomuon@gmail.com'
           
           echo "::set-output name=user_name::$USER_NAME"
           echo "::set-output name=user_email::$USER_EMAIL"
