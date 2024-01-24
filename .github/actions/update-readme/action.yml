@@ -27,12 +27,12 @@ inputs:
     description: 'Commit message'
     required: true
 
-  email:
+  EMAIL:
     description: 'The committer email'
     required: true
     default: ${{ github.actor }}@localhost
 
-  name:
+  NAME:
     description: 'The committer name'
     required: true
     default: ${{ github.actor }}
