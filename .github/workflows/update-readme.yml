@@ -19,8 +19,8 @@ jobs:
       - name: Capture Git Configuration
         id: capture_git_config
         run: |
-          USER_NAME='Jean Gomes'
-          USER_EMAIL='neutrinomuon@gmail.com'
+          echo "USER_NAME='Jean Gomes'" >> $GITHUB_ENV
+          echo "USER_EMAIL='neutrinomuon@gmail.com'" >> $GITHUB_ENV
           echo "NAME=${{ USER_NAME }}" >> $GITHUB_ENV
           echo "EMAIL=${{ USER_NAME }}" >> $GITHUB_ENV
 
@@ -40,14 +40,14 @@ jobs:
           echo "Git User Name: ${{ env.NAME }}"
           echo "Git User Email: ${{ env.EMAIL }}"
 
-      - name: Use custom action in update readme
-        uses: ./.github/actions/update-readme
-        with:
-          TOKEN: ${{ env.TOKEN }}
-          BRANCH: ${{ env.BRANCH }}
-          REPOSITORY: ${{ env.REPOSITORY }}
-          FILE: 'README.md'
-          COMMIT_MESSAGE: 'Update README with new version'
-          NAME: ${{ env.NAME }}
-          EMAIL: ${{ env.EMAIL }}
+#      - name: Use custom action in update readme
+#        uses: ./.github/actions/update-readme
+#        with:
+#          TOKEN: ${{ env.TOKEN }}
+#          BRANCH: ${{ env.BRANCH }}
+#          REPOSITORY: ${{ env.REPOSITORY }}
+#          FILE: 'README.md'
+#          COMMIT_MESSAGE: 'Update README with new version'
+#          NAME: ${{ env.NAME }}
+#          EMAIL: ${{ env.EMAIL }}
           
