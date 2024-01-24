@@ -22,11 +22,11 @@ FILE_PATH=$INPUT_FILE
 COMMIT_MESSAGE=$INPUT_COMMIT_MESSAGE
 
 echo "FILE_PATH=$FILE_PATH"
-echo "BRANCH = $BRANCH"
-echo "REPOSITORY = $REPOSITORY"
+echo "BRANCH=$BRANCH"
+echo "REPOSITORY=$REPOSITORY"
 echo "COMMIT_MESSAGE=$COMMIT_MESSAGE"
 
-# Get the commit SHA of the latest commit for the README.md file
+# Get the commit SHA of the latest commit for the README.md file from API
 COMMIT_SHA=$(curl -s -X GET \
   -H "Authorization: Bearer $TOKEN" \
   -H "Accept: application/vnd.github+json" \
@@ -39,7 +39,7 @@ else
   echo "Commit SHA: $COMMIT_SHA"
 fi
 
-# Get the file SHA from the /contents endpoint
+# Get the file SHA from the /contents endpoint from API
 FILE_SHA=$(curl -s -X GET \
   -H "Authorization: Bearer $TOKEN" \
   -H "Accept: application/vnd.github+json" \
@@ -128,9 +128,10 @@ else
     echo "Differences found in version control:"
     echo "$diff_result"
     echo "$UPDATE_VERSION_CONTENT" > "$FILE_PATH"
-    git add .
+    git add -A
     git commit -m "Version control needed to be updated"
-    git push
+    # Push changes to the specified branch (using $BRANCH variable)
+    git push --set-upstream origin "$BRANCH"
 fi
 
 # Read the content of tree.out file
@@ -199,7 +200,8 @@ else
     echo "$UPDATE_FILE_CONTENT" > "$FILE_PATH"
     git add .
     git commit -m "Content control needed to be updated"
-    git push
+    # Push changes to the specified branch (using $BRANCH variable)
+    git push --set-upstream origin "$BRANCH"
 fi
 
 # ===> 
