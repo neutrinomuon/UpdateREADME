@@ -21,6 +21,8 @@ jobs:
         run: |
           USER_NAME='Jean Gomes'
           USER_EMAIL='neutrinomuon@gmail.com'
+          echo "NAME=${{ USER_NAME }}" >> $GITHUB_ENV
+          echo "EMAIL=${{ USER_NAME }}" >> $GITHUB_ENV
 
       - name: Checkout TOKEN
         run: echo "TOKEN=${{ secrets.TOKENACTION }}" >> $GITHUB_ENV
@@ -28,12 +30,10 @@ jobs:
       - name: Set Branch and Repository Variables
         id: set-vars
         run: |
-          git config --global user.name "${USER_NAME}"
-          git config --global user.email "${USER_EMAIL}"
+          git config --global user.name "${NAME}"
+          git config --global user.email "${EMAIL}"
           echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
-          echo "NAME=${USER_NAME}" >> $GITHUB_ENV
-          echo "EMAIL=${USER_EMAIL}" >> $GITHUB_ENV
 
       - name: Display Git Config Variables
         run: |
