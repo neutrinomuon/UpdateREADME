@@ -2,6 +2,13 @@
 
 echo "================================================================="
 
+# Setup Git interface
+# Track who is using this action
+git config --global user.name "${GITHUB_ACTOR}"
+git config --global user.email "${INPUT_EMAIL}"
+# Make sure to add to the safe list of directories
+git config --global --add safe.directory /github/workspace
+
 #python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./')"
 python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./',save_to_file='tree.out')"
 
@@ -128,6 +135,7 @@ else
     echo "Differences found in version control:"
     echo "$diff_result"
     echo "$UPDATE_VERSION_CONTENT" > "$FILE_PATH"
+    # Send changes back to the server
     git add -A
     git commit -m "Version control needed to be updated"
     # Push changes to the specified branch (using $BRANCH variable)
@@ -198,6 +206,7 @@ else
     echo "Differences found in content control:"
     echo "$diff_result"
     echo "$UPDATE_FILE_CONTENT" > "$FILE_PATH"
+    # Send changes back to the server
     git add .
     git commit -m "Content control needed to be updated"
     # Push changes to the specified branch (using $BRANCH variable)
