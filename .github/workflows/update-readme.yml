@@ -13,6 +13,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Capture Git Configuration
+        id: capture_git_config
+        run: |
+          USER_NAME=$(git config --get user.name)
+          USER_EMAIL=$(git config --get user.email)
+          
+          echo "::set-output name=user_name::$USER_NAME"
+          echo "::set-output name=user_email::$USER_EMAIL"
+
+      - name: Set up Git Config
+        run: |
+          git config --global user.name "${{ steps.capture_git_config.outputs.user_name }}"
+          git config --global user.email "${{ steps.capture_git_config.outputs.user_email }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKENACTION }}
+
       - name: Checkout TOKEN
         run: echo "TOKEN=${{ secrets.TOKENACTION }}" >> $GITHUB_ENV
 
