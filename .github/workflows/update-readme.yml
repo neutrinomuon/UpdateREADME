@@ -33,8 +33,10 @@ jobs:
           echo "NAME=$(git config --get user.name)" >> $GITHUB_ENV
           echo "EMAIL=$(git config --get user.email)" >> $GITHUB_ENV
 
-          echo "$NAME"
-          echo "$EMAIL"
+      - name: Display Git Config Variables
+        run: |
+          echo "Git User Name: $NAME"
+          echo "Git User Email: $EMAIL"
 
       - name: Use custom action in update readme
         uses: ./.github/actions/update-readme
