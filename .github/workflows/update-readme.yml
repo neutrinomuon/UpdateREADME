@@ -13,8 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Git
-        run: sudo apt-get update && sudo apt-get install git -y
+#      - name: Install Git
+#        run: sudo apt-get update && sudo apt-get install git -y
 
       - name: Checkout TOKEN
         run: echo "TOKEN=${{ secrets.TOKENACTION }}" >> $GITHUB_ENV
@@ -22,8 +22,6 @@ jobs:
       - name: Set Branch and Repository Variables
         id: set-vars
         run: |
-          git config --global user.name "${NAME}"
-          git config --global user.email "${EMAIL}"
           echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
 
