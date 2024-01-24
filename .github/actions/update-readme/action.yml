@@ -30,13 +30,10 @@ inputs:
   NAME:
     description: 'The committer name'
     required: true
-    default: ${{ env.NAME }}
 
   EMAIL:
     description: 'The committer email'
     required: true
-    default: ${{ env.EMAIL }}
-
 
 outputs:
   updatedContent:
