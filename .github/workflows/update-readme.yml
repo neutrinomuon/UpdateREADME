@@ -22,13 +22,6 @@ jobs:
           USER_NAME='Jean Gomes'
           USER_EMAIL='neutrinomuon@gmail.com'
 
-      - name: Set up Git Config
-        run: |
-          git config --global user.name "${{ steps.capture_git_config.outputs.user_name }}"
-          git config --global user.email "${{ steps.capture_git_config.outputs.user_email }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKENACTION }}
-
       - name: Checkout TOKEN
         run: echo "TOKEN=${{ secrets.TOKENACTION }}" >> $GITHUB_ENV
 
@@ -39,6 +32,9 @@ jobs:
           echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
           echo "NAME=$(git config --get user.name)" >> $GITHUB_ENV
           echo "EMAIL=$(git config --get user.email)" >> $GITHUB_ENV
+
+          echo "$NAME"
+          echo "$EMAIL"
 
       - name: Use custom action in update readme
         uses: ./.github/actions/update-readme
