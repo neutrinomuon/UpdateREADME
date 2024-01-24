@@ -138,7 +138,6 @@ TREE_CONTENT=$(cat tree1.out)
 echo ""
 echo "===== TREE_CONTENT DEBUG ====="
 echo "$TREE_CONTENT"
-echo ""
 
 # Check if README.md already contains a STRUCTURE section
 echo ""
@@ -147,21 +146,21 @@ echo "Checking if README.md already contains a STRUCTURE section"
 if [[ $UPDATED_VERSION_CONTENT =~ "#### <b>STRUCTURE" ]]; then
     UPDATED_FILE_CONTENT=$(awk '
 /#### <b>STRUCTURE[^<]*<\/b>/,/\<\/pre>/ {
-      if (/#### <b>STRUCTURE[^<]*<\/b>/) {
-         print $0
-         print "<pre>"
-         while ((getline line < "tree1.out") > 0) {
-             print line
-         }
-         in_block = 1
-         next
-     }
-     if (/<\/pre>/) {
-         in_block = 0
- 	print "</pre>"
-         next
-     }
-     if (in_block) next
+    if (/#### <b>STRUCTURE[^<]*<\/b>/) {
+        print $0
+        print "<pre>"
+        while ((getline line < "tree1.out") > 0) {
+            print line
+        }
+        in_block = 1
+        next
+    }
+    if (/<\/pre>/) {
+        in_block = 0
+	print "</pre>"
+        next
+    }
+    if (in_block) next
 }
 { print }
 ' <<< "$UPDATED_VERSION_CONTENT")
