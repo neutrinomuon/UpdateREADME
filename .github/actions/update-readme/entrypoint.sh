@@ -87,10 +87,29 @@ diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 
 # Check if there are differences
 if [ $? -eq 0 ]; then
-    echo "The files $file and $test_file are identical."
+    echo "The files $file and $TEST_FILE are identical."
 else
     echo "Differences found:"
     echo "$diff_result"
+    echo "$FILE_CONTENT_LOCAL" > "$FILE_PATH"
+fi
+
+# Now we are going to check the version published and the current from version.txt file
+UPDATE_VERSION_CONTENT=$(echo "$FILE_CONTENT_LOCAL" | sed "/last stable version:/s/.*/last stable version: $NEW_VERSION/")
+# Print to a file called $TEST_FILE
+echo "$UPDATE_VERSION_CONTENT" > "$TEST_FILE"
+
+# Verify difference between both files for the version
+# Run diff and display the differences
+diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
+
+# Check if there are differences
+if [ $? -eq 0 ]; then
+    echo "The files $file and $TEST_FILE are identical in what concerns the version control."
+else
+    echo "Differences found in version control:"
+    echo "$diff_result"
+    echo "$UPDATE_VERSION_CONTENT" > "$FILE_PATH"
 fi
 
 # Decode the file contents
