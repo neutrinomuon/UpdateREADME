@@ -16,6 +16,7 @@ python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./',save_to_file=
 # cat tree.out | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" > tree1.out
 #     ^------^ SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
 sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" tree.out > tree1.out
+rm tree.out
 
 #TOKEN=$1
 #FILE_PATH=$2
@@ -149,6 +150,7 @@ TREE_CONTENT=$(cat tree1.out)
 echo ""
 echo "===== TREE_CONTENT DEBUG ====="
 echo "$TREE_CONTENT"
+rm tree1.out
 
 # Check if README.md already contains a STRUCTURE section
 echo ""
