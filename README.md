@@ -13,6 +13,10 @@ RESUME: Automatically updates the README.md file with the latest version number 
 
 <hr>
 
+![My Skills](https://skillicons.dev/icons?i=python,bash,numpy&theme=light)<br>
+
+<hr>
+
 #### <b>STRUCTURE of UpdateREADME</b>
 <pre>
 #################################################
