@@ -136,7 +136,7 @@ if [ $? -eq 0 ]; then
     echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the version control."
 else
     echo "Differences found in version control:"
-    echo "$diff_result"
+    # echo "$diff_result"
     echo "$UPDATE_VERSION_CONTENT" > "$FILE_PATH"
     # Send changes back to the server
     git add -A
