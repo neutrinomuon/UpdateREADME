@@ -31,7 +31,7 @@ jobs:
 #          echo "Git User Email: ${{ env.EMAIL }}"
 
       - name: Use custom action in update readme
-        uses: ./.github/
+        uses: ./
         with:
           TOKEN: ${{ env.TOKEN }}
           BRANCH: ${{ env.BRANCH }}
