@@ -137,7 +137,8 @@ if [ $? -eq 0 ]; then
 else
     echo "Differences found in version control:"
     # echo "$diff_result"
-    echo "$UPDATE_VERSION_CONTENT" > "$FILE_PATH"
+    echo "$FILE_PATH is going to be substituted"
+    echo "$UPDATED_VERSION_CONTENT" > "$FILE_PATH"
     # Send changes back to the server
     git add -A
     git commit -m "Version control needed to be updated"
