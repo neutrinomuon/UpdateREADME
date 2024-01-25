@@ -84,7 +84,7 @@ if [[ -n $(tail -c 1 "$FILE_PATH" | tr -d '\n') ]]; then
     echo >> "$FILE_PATH"
     echo "Added newline to $FILE_PATH"
 else
-    echo "File $file already ends with a newline"
+    echo "File $FILE_PATH already ends with a newline"
 fi
 
 # Get the current file from local directory
@@ -96,7 +96,8 @@ diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 
 # Check if there are differences
 echo "Checking the $FILE_PATH!"
-if [ $? -eq 0 ]; then
+# if [ $? -eq 0 ]; then
+if [ "$diff_result" -ne 0 ]; then
     echo "The files $FILE_PATH and $TEST_FILE are identical."
 else
     echo "Differences found:"
@@ -131,7 +132,8 @@ echo "$UPDATED_VERSION_CONTENT" > "$TEST_FILE"
 diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 
 # Check if there are differences
-if [ $? -eq 0 ]; then
+# if [ $? -eq 0 ]; then
+if [ "$diff_result" -ne 0 ]; then
     echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the version control."
 else
     echo "Differences found in version control:"
@@ -204,7 +206,8 @@ echo "$UPDATED_FILE_CONTENT" > "$TEST_FILE"
 diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 
 # Check if there are differences
-if [ $? -eq 0 ]; then
+# if [ $? -eq 0 ]; then
+if [ "$diff_result" -ne 0 ]; then    
     echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the content control."
 else
     echo "Differences found in content control:"
