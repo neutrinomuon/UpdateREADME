@@ -106,8 +106,8 @@ echo "Checking the $FILE_PATH!"
 
 # Check if there are differences
 diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
-if [ $? -eq 0 ]; then
-#if [ -z "$diff_result" ]; then
+#if [ $? -eq 0 ]; then
+if [ -z "$diff_result" ]; then
     echo "The files $FILE_PATH and $TEST_FILE are identical."
 else
     echo "Differences found:"
@@ -149,8 +149,8 @@ echo "$UPDATED_VERSION_CONTENT" > "$TEST_FILE"
 
 # Check if there are differences
 diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
-if [ $? -eq 0 ]; then
-# if [ -n "$diff_result" ]; then
+#if [ $? -eq 0 ]; then
+if [ -n "$diff_result" ]; then
     echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the version control."
 else
     echo "Differences found in version control:"
@@ -232,8 +232,8 @@ echo "$UPDATED_FILE_CONTENT" > "$TEST_FILE"
 
 # Check if there are differences
 diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
-if [ $? -eq 0 ]; then
-#if [ -z "$diff_result" ]; then    
+#if [ $? -eq 0 ]; then
+if [ -z "$diff_result" ]; then    
     echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the content control."
 else
     echo "Differences found in content control:"
