@@ -7,8 +7,8 @@ echo "EMAIL = ${INPUT_EMAIL}"
 
 # Setup Git interface
 # Track who is using this action to update the README.md file
-git config --global user.name "${INPUT_NAME}"
-git config --global user.email "${INPUT_EMAIL}"
+git config user.name "Jean Gomes"
+git config user.email "neutrinomuon@gmail.com"
 # Make sure to add to the safe list of directories
 git config --global --add safe.directory /github/workspace
 
