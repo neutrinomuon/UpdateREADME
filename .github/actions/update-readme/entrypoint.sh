@@ -218,12 +218,19 @@ echo ""
 # Print to a file called $TEST_FILE
 echo "$UPDATED_FILE_CONTENT" > "$TEST_FILE"
 
-# Run diff and display the differences                                                                                                                                                             
+# Run diff and display the differences
 diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
+diff_exit_code=$?
+
+# Check if the diff command was successful
+if [ "$diff_exit_code" -ne 0 ]; then
+    echo "Error while running the diff command. Please check the file paths."
+    exit 1
+fi
 
 # Check if there are differences
 # if [ $? -eq 0 ]; then
-if [ "$diff_result" -ne 0 ]; then    
+if [ -z "$diff_result" ]; then    
     echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the content control."
 else
     echo "Differences found in content control:"
