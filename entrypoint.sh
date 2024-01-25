@@ -1,0 +1,1 @@
+.github/actions/update-readme/entrypoint.sh
