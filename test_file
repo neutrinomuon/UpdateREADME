@@ -17,112 +17,116 @@ RESUME: Automatically updates the README.md file with the latest version number 
 <pre>
 #################################################
 workspace
-├── tree1.out
-├── version.txt
+├── LICENSE.txt
+├── test
 ├── .git
-│   ├── shallow
-│   ├── logs
-│   │   ├── refs
-│   │   │   ├── heads
-│   │   │   │   └── main
-│   │   │   └── remotes
-│   │   │       └── origin
-│   │   │           └── main
-│   │   └── HEAD
-│   ├── hooks
-│   │   ├── pre-commit.sample
-│   │   ├── post-update.sample
-│   │   ├── pre-push.sample
-│   │   ├── update.sample
-│   │   ├── pre-merge-commit.sample
-│   │   ├── pre-rebase.sample
-│   │   ├── applypatch-msg.sample
-│   │   ├── prepare-commit-msg.sample
-│   │   ├── sendemail-validate.sample
-│   │   ├── push-to-checkout.sample
-│   │   ├── fsmonitor-watchman.sample
-│   │   ├── commit-msg.sample
-│   │   ├── pre-receive.sample
-│   │   └── pre-applypatch.sample
+│   ├── HEAD
+│   ├── objects
+│   │   ├── ab
+│   │   │   └── 2b9168f79149b4283dceec34b6cff62bee39c4
+│   │   ├── pack
+│   │   ├── a5
+│   │   │   └── 7eabd82582b9a9aa08541e88b4ff1d8b877a1a
+│   │   ├── 1b
+│   │   │   └── e01099f4c60996ca745bdabb708bf64b7298b6
+│   │   ├── 51
+│   │   │   └── 4dae226d747310fd8a4621dcd6cbb8b1dc420d
+│   │   ├── 77
+│   │   │   └── d6f4ca23711533e724789a0a0045eab28c5ea6
+│   │   ├── f2
+│   │   │   └── 2560d7ff01bb16ca145420cd54cbceee78d6d0
+│   │   ├── ca
+│   │   │   └── c9823e786a11bcf38df2b66cdbcb5e61ebf23b
+│   │   ├── 71
+│   │   │   └── 5dde02a154e818b07a5c7f14604e55dbdd9d93
+│   │   ├── 52
+│   │   │   └── 9b8dfa23d64871b04aceadb03324fea80b4eae
+│   │   ├── 37
+│   │   │   └── 4808bdd64b167c234345a05a8e94fb0a79cf31
+│   │   ├── info
+│   │   ├── 3b
+│   │   │   └── d3b5a80009b500e3e466ba237cbd6b49c60ec5
+│   │   ├── 6b
+│   │   │   └── 235cfec2aa3378fa28a0c3f0b53bf2799e0a33
+│   │   ├── 16
+│   │   │   └── 9c70f42a95a91e6fe48f702f349feb93529315
+│   │   ├── 21
+│   │   │   └── f1f95c47145343437991b8b1f478766573af05
+│   │   ├── 1f
+│   │   │   └── acfbac556f8e938d75ba6e53d8be00eb5c2ae6
+│   │   ├── 55
+│   │   │   └── 894d9ce7841013b25713168b6ad0c9e51955e2
+│   │   ├── b8
+│   │   │   └── 295db83f1a5d0dbe90402b5dd7d692e4e9a6ea
+│   │   ├── 04
+│   │   │   └── 189a09daf2718f95b1bb8a20cd5b25e24ac4b6
+│   │   ├── 46
+│   │   │   └── 51eee488eec238025cbd1b16c2c754c48120fb
+│   │   ├── 60
+│   │   │   └── 1ddea2de291157b5780981077c5076e3100cc7
+│   │   ├── 00
+│   │   │   └── c995e81cfa306babaae24d94ac473a999e02f6
+│   │   └── 0f
+│   │       └── 8971bd9942a347ea402b0b5e5979b0405e1e30
 │   ├── config
-│   ├── index
-│   ├── refs
-│   │   ├── tags
-│   │   ├── heads
-│   │   │   └── main
-│   │   └── remotes
-│   │       └── origin
-│   │           └── main
 │   ├── FETCH_HEAD
 │   ├── info
 │   │   └── exclude
-│   ├── branches
+│   ├── hooks
+│   │   ├── push-to-checkout.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-commit.sample
+│   │   ├── applypatch-msg.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-receive.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── commit-msg.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── shallow
+│   ├── refs
+│   │   ├── heads
+│   │   │   └── main
+│   │   ├── remotes
+│   │   │   └── origin
+│   │   │       └── main
+│   │   └── tags
 │   ├── description
-│   ├── objects
-│   │   ├── pack
-│   │   ├── 64
-│   │   │   └── d90a53165d2a7ccf5ddabfa0b0aefa1ff95d16
-│   │   ├── 26
-│   │   │   └── e39d481d2db2ee3dc903165d7a1055521c64d2
-│   │   ├── 3e
-│   │   │   └── 9eaa8ef592b9870e2887c20183cf3c9740e63b
-│   │   ├── 3b
-│   │   │   └── d3b5a80009b500e3e466ba237cbd6b49c60ec5
-│   │   ├── 1e
-│   │   │   └── 28477e2bba3437140ea1b3afd682ba7c6c1560
-│   │   ├── f2
-│   │   │   └── 2560d7ff01bb16ca145420cd54cbceee78d6d0
-│   │   ├── 9e
-│   │   │   └── 5309ef031777655a6a9e1fa9ea6f3de2147414
-│   │   ├── 8a
-│   │   │   └── cdd82b765e8e0b8cd8787f7f18c7fe2ec52493
-│   │   ├── 93
-│   │   │   └── c32a72310c4f6c3e9449970b059c48e068ab26
-│   │   ├── 76
-│   │   │   └── 5c28bf76e72d8586346a075704f90172e06c3c
-│   │   ├── 71
-│   │   │   └── 5dde02a154e818b07a5c7f14604e55dbdd9d93
-│   │   ├── 62
-│   │   │   └── 254d49c221ab2a3271fbbd426d49378839d8e3
-│   │   ├── 6b
-│   │   │   └── 235cfec2aa3378fa28a0c3f0b53bf2799e0a33
-│   │   ├── 22
-│   │   │   └── 738c4a2bc884af1d2ce131b07d0c393572b811
-│   │   ├── info
-│   │   ├── 1f
-│   │   │   └── acfbac556f8e938d75ba6e53d8be00eb5c2ae6
-│   │   ├── d8
-│   │   │   └── 59cfc411e504c0f5329dcd4f6eea1c23e83c63
-│   │   ├── a5
-│   │   │   └── 7eabd82582b9a9aa08541e88b4ff1d8b877a1a
-│   │   ├── e1
-│   │   │   └── 2fbb9904c17400cab1a1f1c7bfe5bd649be466
-│   │   ├── f6
-│   │   │   └── 7e700453473caeb9019f742b8e91c82041f9c0
-│   │   ├── 0f
-│   │   │   └── 8971bd9942a347ea402b0b5e5979b0405e1e30
-│   │   └── 1b
-│   │       └── e01099f4c60996ca745bdabb708bf64b7298b6
-│   └── HEAD
-├── LICENSE.txt
-├── tree.out
+│   ├── branches
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── main
+│   │       └── remotes
+│   │           └── origin
+│   │               └── main
+│   └── index
+├── version.txt
 ├── figures
-│   ├── PEP8-StyleGuide.jpg
+│   ├── Education_white_background.png
 │   ├── Education_black_background.png
-│   ├── Education,_Studying,_University,_Alumni_-_icon.png
+│   ├── PEP8-StyleGuide.jpg
 │   ├── Education_black_background-removebg.png
-│   └── Education_white_background.png
+│   └── Education,_Studying,_University,_Alumni_-_icon.png
+├── test_file
 ├── README.md
-└── .github
-    ├── workflows
-    │   └── update-readme.yml
-    └── actions
-        └── update-readme
-            ├── dockerfile
-            ├── action.yml
-            └── entrypoint.sh
+├── .github
+│   ├── actions
+│   │   └── update-readme
+│   │       ├── entrypoint.sh
+│   │       ├── action.yml
+│   │       └── dockerfile
+│   └── workflows
+│       └── update-readme.yml
+├── tree1.out
+└── tree.out
 
-171 directories, 359 files
+175 directories, 369 files
 #################################################
 Generated with tree_colored @ 2023 - © Jean Gomes
 #################################################
