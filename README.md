@@ -22,48 +22,49 @@ workspace
 ├── .git
 │   ├── HEAD
 │   ├── objects
+│   │   ├── c7
+│   │   │   └── 4635b611971f92ef057503be0f700343a4b2b4
+│   │   ├── 48
+│   │   │   └── d864383ac6c2c7b5b23df4d07e9d476e38f19f
 │   │   ├── pack
 │   │   ├── a5
 │   │   │   └── 7eabd82582b9a9aa08541e88b4ff1d8b877a1a
-│   │   ├── 3f
-│   │   │   └── 68396764eed4c479ac2d4b00f3cf2069705d6d
-│   │   ├── 45
-│   │   │   └── e5e8a9e0796ac50a372c845b090cae1e72a199
+│   │   ├── 05
+│   │   │   └── c5540d71e0a9fa86ddb85eac7e8e1846c008e5
 │   │   ├── 1b
 │   │   │   └── e01099f4c60996ca745bdabb708bf64b7298b6
 │   │   ├── 51
 │   │   │   └── 4dae226d747310fd8a4621dcd6cbb8b1dc420d
 │   │   ├── f2
-│   │   │   ├── 2560d7ff01bb16ca145420cd54cbceee78d6d0
-│   │   │   └── ee5a2086f871a4793efe58ecd11546d0e8dbd3
-│   │   ├── 10
-│   │   │   └── 11fd052744d1395907087b2675333e0ed615f6
-│   │   ├── ad
-│   │   │   └── 90aa7eb54c3b1c193435f16815e492a7d6114d
+│   │   │   └── 2560d7ff01bb16ca145420cd54cbceee78d6d0
+│   │   ├── b7
+│   │   │   └── a27df001f8bc61937239c2fc8937fb6133f2f6
 │   │   ├── ca
 │   │   │   └── c9823e786a11bcf38df2b66cdbcb5e61ebf23b
+│   │   ├── a7
+│   │   │   └── b2ad4d34087ada36c4ba664acb796393f2f824
 │   │   ├── 71
 │   │   │   └── 5dde02a154e818b07a5c7f14604e55dbdd9d93
-│   │   ├── af
-│   │   │   └── d7316dee30da49f70b48fec2c4da6c57a96b57
-│   │   ├── b1
-│   │   │   └── 593f2ac31ef37d12206f1b279af633a159561a
 │   │   ├── 37
-│   │   │   ├── 4808bdd64b167c234345a05a8e94fb0a79cf31
-│   │   │   └── 15a06fc7ebdfc57dd9fc82b55063bf7ab631e9
+│   │   │   └── 4808bdd64b167c234345a05a8e94fb0a79cf31
 │   │   ├── info
-│   │   ├── fc
-│   │   │   └── ec07e957bdfca323fa3f3345c150ee685e28d0
+│   │   ├── e4
+│   │   │   └── 55fb25504c78980069862b6229571349e11fd1
 │   │   ├── 3b
 │   │   │   └── d3b5a80009b500e3e466ba237cbd6b49c60ec5
+│   │   ├── 7b
+│   │   │   └── 0f7ad9a79d86f4d22117328b36423556bacfd2
 │   │   ├── 6b
-│   │   │   └── 235cfec2aa3378fa28a0c3f0b53bf2799e0a33
+│   │   │   ├── 235cfec2aa3378fa28a0c3f0b53bf2799e0a33
+│   │   │   └── d18280e0724e012f3a72bfe5486fae3e8c99fd
 │   │   ├── 16
 │   │   │   └── 9c70f42a95a91e6fe48f702f349feb93529315
 │   │   ├── 1f
 │   │   │   └── acfbac556f8e938d75ba6e53d8be00eb5c2ae6
 │   │   ├── 8a
 │   │   │   └── cdd82b765e8e0b8cd8787f7f18c7fe2ec52493
+│   │   ├── bf
+│   │   │   └── dcf4516fba260376df4fd1d9ecbd546eba635a
 │   │   └── 0f
 │   │       └── 8971bd9942a347ea402b0b5e5979b0405e1e30
 │   ├── config
@@ -124,7 +125,7 @@ workspace
 ├── tree1.out
 └── tree.out
 
-167 directories, 369 files
+171 directories, 369 files
 #################################################
 Generated with tree_colored @ 2023 - © Jean Gomes
 #################################################
