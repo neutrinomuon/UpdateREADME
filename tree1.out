@@ -7,33 +7,36 @@ workspace
 │   ├── objects
 │   │   ├── pack
 │   │   ├── a5
-│   │   │   ├── 7eabd82582b9a9aa08541e88b4ff1d8b877a1a
-│   │   │   └── 48296f4910c8fd3f9a7daa8db46b7783ee82aa
+│   │   │   └── 7eabd82582b9a9aa08541e88b4ff1d8b877a1a
 │   │   ├── 3f
 │   │   │   └── 68396764eed4c479ac2d4b00f3cf2069705d6d
 │   │   ├── 45
-│   │   │   └── d3d02697d2de71a8070cf2fa428149fb9039b1
+│   │   │   └── e5e8a9e0796ac50a372c845b090cae1e72a199
 │   │   ├── 1b
 │   │   │   └── e01099f4c60996ca745bdabb708bf64b7298b6
 │   │   ├── 51
 │   │   │   └── 4dae226d747310fd8a4621dcd6cbb8b1dc420d
-│   │   ├── 70
-│   │   │   └── b587eac2c8aea9f31dc25340c108e95917cd10
-│   │   ├── 77
-│   │   │   └── d6f4ca23711533e724789a0a0045eab28c5ea6
 │   │   ├── f2
 │   │   │   ├── 2560d7ff01bb16ca145420cd54cbceee78d6d0
 │   │   │   └── ee5a2086f871a4793efe58ecd11546d0e8dbd3
+│   │   ├── 10
+│   │   │   └── 11fd052744d1395907087b2675333e0ed615f6
+│   │   ├── ad
+│   │   │   └── 90aa7eb54c3b1c193435f16815e492a7d6114d
 │   │   ├── ca
 │   │   │   └── c9823e786a11bcf38df2b66cdbcb5e61ebf23b
 │   │   ├── 71
 │   │   │   └── 5dde02a154e818b07a5c7f14604e55dbdd9d93
 │   │   ├── af
 │   │   │   └── d7316dee30da49f70b48fec2c4da6c57a96b57
+│   │   ├── b1
+│   │   │   └── 593f2ac31ef37d12206f1b279af633a159561a
 │   │   ├── 37
 │   │   │   ├── 4808bdd64b167c234345a05a8e94fb0a79cf31
 │   │   │   └── 15a06fc7ebdfc57dd9fc82b55063bf7ab631e9
 │   │   ├── info
+│   │   ├── fc
+│   │   │   └── ec07e957bdfca323fa3f3345c150ee685e28d0
 │   │   ├── 3b
 │   │   │   └── d3b5a80009b500e3e466ba237cbd6b49c60ec5
 │   │   ├── 6b
@@ -42,12 +45,8 @@ workspace
 │   │   │   └── 9c70f42a95a91e6fe48f702f349feb93529315
 │   │   ├── 1f
 │   │   │   └── acfbac556f8e938d75ba6e53d8be00eb5c2ae6
-│   │   ├── d0
-│   │   │   └── 8b7bf89193c8847da182d16683d41551448b83
-│   │   ├── 1d
-│   │   │   └── 4876e792cd5edeff6d071de5870d6b0ee741a4
-│   │   ├── d7
-│   │   │   └── c221d483e31e9bbb79fd71e8b1593857db8aa1
+│   │   ├── 8a
+│   │   │   └── cdd82b765e8e0b8cd8787f7f18c7fe2ec52493
 │   │   └── 0f
 │   │       └── 8971bd9942a347ea402b0b5e5979b0405e1e30
 │   ├── config
@@ -108,7 +107,7 @@ workspace
 ├── tree1.out
 └── tree.out
 
-167 directories, 377 files
+167 directories, 369 files
 #################################################
 Generated with tree_colored @ 2023 - © Jean Gomes
 #################################################
