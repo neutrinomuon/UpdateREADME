@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://raw.githubusercontent.com/neutrinomuon/PyIntegral/main/figures/PyIntegral.png" alt="PyIntegral" width="120px">
+  <img src="https://raw.githubusercontent.com/neutrinomuon/UpdateREADME/main/figures/Logo.jpeg" alt="UpdateREADME" width="120px">
 </p>
 
 ### UpdateREADME
