@@ -92,21 +92,22 @@ FILE_CONTENT_LOCAL=$(cat "$FILE_PATH")
 
 # Verify difference between both files
 # Run diff and display the differences
+echo "Checking the $FILE_PATH!"
+
 diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
-diff_exit_code=$?
+#diff_exit_code=$?
 
 # Check if there are differences
-echo "Checking the $FILE_PATH!"
-# if [ $? -eq 0 ]; then
 
 # Check if the diff command was successful
-if [ "$diff_exit_code" -ne 0 ]; then
-    echo "Error while running the diff command. Please check the file paths."
-    exit 1
-fi
+#if [ "$diff_exit_code" -ne 0 ]; then
+#    echo "Error while running the diff command. Please check the file paths."
+#    exit 1
+#fi
 
 # Check if there are differences
-if [ -z "$diff_result" ]; then
+if [ $? -eq 0 ]; then
+#if [ -z "$diff_result" ]; then
     echo "The files $FILE_PATH and $TEST_FILE are identical."
 else
     echo "Differences found:"
