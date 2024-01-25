@@ -169,7 +169,6 @@ TREE_CONTENT=$(cat tree1.out)
 echo ""
 echo "===== TREE_CONTENT DEBUG ====="
 echo "$TREE_CONTENT"
-rm tree1.out
 
 # Check if README.md already contains a STRUCTURE section
 echo ""
@@ -208,6 +207,8 @@ $TREE_CONTENT
 
 <hr>"
 fi
+# Remove left over
+rm tree1.out
 
 # Debugging output
 echo ""
