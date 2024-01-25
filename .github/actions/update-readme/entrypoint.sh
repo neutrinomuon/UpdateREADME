@@ -210,7 +210,7 @@ else
     echo "$diff_result"
     echo "$UPDATE_FILE_CONTENT" > "$FILE_PATH"
     # Send changes back to the server
-    git add .
+    git add -A
     git commit -m "Content control needed to be updated"
     # Push changes to the specified branch (using $BRANCH variable)
     git push --set-upstream origin "$BRANCH"
