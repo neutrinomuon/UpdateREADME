@@ -208,6 +208,9 @@ else
     echo "Differences found in content control:"
     echo "$diff_result"
     echo "$UPDATED_FILE_CONTENT" > "$FILE_PATH"
+    # Remove left overs
+    rm $TEST_FILE
+    
     # Send changes back to the server
     git add -A
     git commit -m "Content control needed to be updated"
