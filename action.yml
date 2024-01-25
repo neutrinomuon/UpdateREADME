@@ -1,1 +1,49 @@
-.github/actions/update-readme/action.yml
+name: 'Update README.md for project'
+
+description: 'Update README.md with new version and content'
+
+runs:
+  using: 'docker'
+  image: 'dockerfile'
+
+inputs:
+  email:
+    description: "The committer email"
+    required: true
+    default: ${{ github.actor }}@localhost
+    
+  name:
+    description: "The commiter name"
+    required: true
+    default: ${{ github.actor }}
+    
+  TOKEN:
+    description: 'GitHub Token'
+    required: true
+
+  BRANCH:
+    description: 'Branch to update'
+    required: true
+
+  REPOSITORY:
+    description: 'Repository to update'
+    required: true
+
+  FILE:
+    description: 'File to be updated'
+    required: true
+
+  COMMIT_MESSAGE:
+    description: 'Commit message'
+    required: true
+
+outputs:
+  updatedContent:
+    description: 'Updated content of the file'
+
+branding:
+  icon: 'refresh-cw'
+  color: 'blue'
+
+container:
+  image: 'dockerfile'
