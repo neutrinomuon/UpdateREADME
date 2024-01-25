@@ -94,7 +94,6 @@ FILE_CONTENT_LOCAL=$(cat "$FILE_PATH")
 # Run diff and display the differences
 echo "Checking the $FILE_PATH!"
 
-diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 #diff_exit_code=$?
 
 # Check if there are differences
@@ -106,6 +105,7 @@ diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 #fi
 
 # Check if there are differences
+diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 if [ $? -eq 0 ]; then
 #if [ -z "$diff_result" ]; then
     echo "The files $FILE_PATH and $TEST_FILE are identical."
@@ -139,7 +139,6 @@ echo "$UPDATED_VERSION_CONTENT" > "$TEST_FILE"
 
 # Verify difference between both files for the version
 # Run diff and display the differences
-diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 #diff_exit_code=$?
 
 # Check if the diff command was successful
@@ -149,6 +148,7 @@ diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 #fi
 
 # Check if there are differences
+diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 if [ $? -eq 0 ]; then
 # if [ -n "$diff_result" ]; then
     echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the version control."
@@ -220,7 +220,7 @@ echo ""
 echo "$UPDATED_FILE_CONTENT" > "$TEST_FILE"
 
 # Run diff and display the differences
-diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
+
 #diff_exit_code=$?
 
 # Check if the diff command was successful
@@ -230,6 +230,7 @@ diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 #fi
 
 # Check if there are differences
+diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
 if [ $? -eq 0 ]; then
 #if [ -z "$diff_result" ]; then    
     echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the content control."
