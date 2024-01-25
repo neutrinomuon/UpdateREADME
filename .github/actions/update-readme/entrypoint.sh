@@ -146,75 +146,75 @@ else
 fi
 
 # Read the content of tree.out file
-TREE_CONTENT=$(cat tree1.out)
-echo ""
-echo "===== TREE_CONTENT DEBUG ====="
-echo "$TREE_CONTENT"
-
-# Check if README.md already contains a STRUCTURE section
-echo ""
-echo "Checking if README.md already contains a STRUCTURE section"
-
-if [[ $UPDATED_VERSION_CONTENT =~ "#### <b>STRUCTURE" ]]; then
-    UPDATED_FILE_CONTENT=$(awk '
-/#### <b>STRUCTURE[^<]*<\/b>/,/\<\/pre>/ {
-    if (/#### <b>STRUCTURE[^<]*<\/b>/) {
-        print $0
-        print "<pre>"
-        while ((getline line < "tree1.out") > 0) {
-            print line
-        }
-        in_block = 1
-        next
-    }
-    if (/<\/pre>/) {
-        in_block = 0
-	print "</pre>"
-        next
-    }
-    if (in_block) next
-}
-{ print }
-' <<< "$UPDATED_VERSION_CONTENT")
-else
-    UPDATED_CONTENT="$UPDATED_CONTENT
-
-<hr>
-
-#### <b>STRUCTURE</b>
-<pre>
-$TREE_CONTENT
-</pre>
-
-<hr>"
-fi
-
-# Debugging output
-echo ""
-echo "=== UPDATED_CONTENT ==="
-echo "$UPDATED_FILE_CONTENT"
-echo ""
-
-# Verify difference between both files for the content
-# Print to a file called $TEST_FILE
-echo "$UPDATED_FILE_CONTENT" > "$TEST_FILE"
-
-# Run diff and display the differences                                                                                                                                                             
-diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
-
-# Check if there are differences
-if [ $? -eq 0 ]; then
-    echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the content control."
-else
-    echo "Differences found in content control:"
-    echo "$diff_result"
-    echo "$UPDATE_FILE_CONTENT" > "$FILE_PATH"
-    # Send changes back to the server
-    git add -A
-    git commit -m "Content control needed to be updated"
-    # Push changes to the specified branch (using $BRANCH variable)
-    git push --set-upstream origin "$BRANCH"
-fi
+# =====>     TREE_CONTENT=$(cat tree1.out)
+# =====>     echo ""
+# =====>     echo "===== TREE_CONTENT DEBUG ====="
+# =====>     echo "$TREE_CONTENT"
+# =====>     
+# =====>     # Check if README.md already contains a STRUCTURE section
+# =====>     echo ""
+# =====>     echo "Checking if README.md already contains a STRUCTURE section"
+# =====>     
+# =====>     if [[ $UPDATED_VERSION_CONTENT =~ "#### <b>STRUCTURE" ]]; then
+# =====>         UPDATED_FILE_CONTENT=$(awk '
+# =====>     /#### <b>STRUCTURE[^<]*<\/b>/,/\<\/pre>/ {
+# =====>         if (/#### <b>STRUCTURE[^<]*<\/b>/) {
+# =====>             print $0
+# =====>             print "<pre>"
+# =====>             while ((getline line < "tree1.out") > 0) {
+# =====>                 print line
+# =====>             }
+# =====>             in_block = 1
+# =====>             next
+# =====>         }
+# =====>         if (/<\/pre>/) {
+# =====>             in_block = 0
+# =====>     	print "</pre>"
+# =====>             next
+# =====>         }
+# =====>         if (in_block) next
+# =====>     }
+# =====>     { print }
+# =====>     ' <<< "$UPDATED_VERSION_CONTENT")
+# =====>     else
+# =====>         UPDATED_CONTENT="$UPDATED_CONTENT
+# =====>     
+# =====>     <hr>
+# =====>     
+# =====>     #### <b>STRUCTURE</b>
+# =====>     <pre>
+# =====>     $TREE_CONTENT
+# =====>     </pre>
+# =====>     
+# =====>     <hr>"
+# =====>     fi
+# =====>     
+# =====>     # Debugging output
+# =====>     echo ""
+# =====>     echo "=== UPDATED_CONTENT ==="
+# =====>     echo "$UPDATED_FILE_CONTENT"
+# =====>     echo ""
+# =====>     
+# =====>     # Verify difference between both files for the content
+# =====>     # Print to a file called $TEST_FILE
+# =====>     echo "$UPDATED_FILE_CONTENT" > "$TEST_FILE"
+# =====>     
+# =====>     # Run diff and display the differences                                                                                                                                                             
+# =====>     diff_result=$(diff "$FILE_PATH" "$TEST_FILE")
+# =====>     
+# =====>     # Check if there are differences
+# =====>     if [ $? -eq 0 ]; then
+# =====>         echo "The files $FILE_PATH and $TEST_FILE are identical in what concerns the content control."
+# =====>     else
+# =====>         echo "Differences found in content control:"
+# =====>         echo "$diff_result"
+# =====>         echo "$UPDATE_FILE_CONTENT" > "$FILE_PATH"
+# =====>         # Send changes back to the server
+# =====>         git add -A
+# =====>         git commit -m "Content control needed to be updated"
+# =====>         # Push changes to the specified branch (using $BRANCH variable)
+# =====>         git push --set-upstream origin "$BRANCH"
+# =====>     fi
 
 # ===> 
 # ===>     # Check if UPDATED_CONTENT_NEW is different from UPDATED_CONTENT
