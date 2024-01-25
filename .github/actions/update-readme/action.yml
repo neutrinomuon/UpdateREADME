@@ -7,6 +7,14 @@ runs:
   image: 'dockerfile'
 
 inputs:
+  email:
+    description: "The committer email"
+    required: true
+    default: ${{ github.actor }}@localhost
+  name:
+    description: "The commiter name"
+    required: true
+    default: ${{ github.actor }}
   TOKEN:
     description: 'GitHub Token'
     required: true
