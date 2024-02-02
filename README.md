@@ -21,6 +21,22 @@ RESUME: Automatically updates the README.md file with the latest version number 
 
 <hr>
 
+#### <b>Example of yaml file</b>
+
+<pre>
+- name: Use custom action in update readme
+  uses: 'neutrinomuon/UpdateREADME@v0.0.3'  # Replace with the actual repository and version
+  with:
+    TOKEN: ${{ secrets.TOKENACTION }}
+    BRANCH: ${{ env.BRANCH }}
+    REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
+    LENGTH_LIMIT: 100000
+    FILE: 'README.md'
+    COMMIT_MESSAGE: 'Update README with new version'
+</pre>
+
+<hr>
+
 #### <b>STRUCTURE of UpdateREADME</b>
 <pre>
 #################################################
