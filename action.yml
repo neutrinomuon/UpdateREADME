@@ -29,6 +29,10 @@ inputs:
     description: 'Repository to update'
     required: true
 
+  LENGTH_LIMIT:
+    description: 'Length limit for the directories'
+    required: true
+
   FILE:
     description: 'File to be updated'
     required: true

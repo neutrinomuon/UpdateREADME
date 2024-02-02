@@ -11,7 +11,7 @@ git config --global user.email "$INPUT_EMAIL"
 git config --global --add safe.directory /github/workspace
 
 #python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./')"
-python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./',save_to_file='tree.out')"
+python3 -c "import TreeHue.treehue_colored as tree; tree.tree('./',length_limit=$INPUT_LENGTH_LIMIT,save_to_file='tree.out')"
 
 # cat tree.out | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" > tree1.out
 #     ^------^ SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
