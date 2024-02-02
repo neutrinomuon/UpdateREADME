@@ -1,9 +1,9 @@
 name: Update README.md from repository
 
-on: 
+on:
   push:
     paths-ignore:
-        - '.github/workflows/update-readme.yml'
+      - '.github/workflows/update-readme.yml'
 
 jobs:
   update-readme:
@@ -19,9 +19,9 @@ jobs:
       - name: Set Branch and Repository Variables
         id: set-vars
         run: |
-	  echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
-	  echo "LENGTH_LIMIT=100000" >> $GITHUB_ENV
+          echo "LENGTH_LIMIT=100000" >> $GITHUB_ENV
 
       - name: Use custom action in update readme
         uses: ./
@@ -29,8 +29,7 @@ jobs:
           TOKEN: ${{ env.TOKEN }}
           BRANCH: ${{ env.BRANCH }}
           REPOSITORY: ${{ env.REPOSITORY }}
-	  LENGTH_LIMIT: ${{ env.LENGTH_LIMIT }}
-	  FILE: 'README.md'
+          LENGTH_LIMIT: ${{ env.LENGTH_LIMIT }}
+          FILE: 'README.md'
           COMMIT_MESSAGE: 'Update README with new version'
 
-          
