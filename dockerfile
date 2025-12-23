@@ -1,18 +1,18 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 RUN apt-get update && \
     apt-get install -y \
-    jq \
-    curl \
-    python3 \
-    python3-pip \
-    git
-
-RUN pip3 install colorama
-RUN pip3 install treehue
+        jq \
+        curl \
+        git \
+        python3 \
+        python3-pip \
+        ca-certificates \
+    && python3 -m pip install --upgrade pip \
+    && pip3 install --no-cache-dir colorama treehue \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
-
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
