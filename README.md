@@ -5,7 +5,7 @@
 ### UpdateREADME
 
 ####  An action to update automatically README.md file
-email: [antineutrinomuon@gmail.com](mailto:antineutrinomuon@gmail.com), [jean@astro.up.pt](mailto:jean@astro.up.pt)
+email: [antineutrinomuon@gmail.com](mailto:antineutrinomuon@gmail.com)
 
 © Copyright ®
 
