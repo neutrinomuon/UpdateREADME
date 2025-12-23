@@ -7,10 +7,11 @@ RUN apt-get update && \
         git \
         python3 \
         python3-pip \
-        ca-certificates \
-    && python3 -m pip install --upgrade pip \
-    && pip3 install --no-cache-dir colorama treehue \
-    && rm -rf /var/lib/apt/lists/*
+        ca-certificates
+
+RUN python3 -m pip install --upgrade pip
+RUN pip3 install --no-cache-dir colorama treehue
+RUN rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
