@@ -111,25 +111,26 @@ workspace
 │   │   │   └── 7eabd82582b9a9aa08541e88b4ff1d8b877a1a
 │   │   ├── 1f
 │   │   │   └── acfbac556f8e938d75ba6e53d8be00eb5c2ae6
-│   │   ├── 5b
-│   │   │   └── 6ed8d50fe72e65575df1430e1438d89a4a08b3
 │   │   ├── f8
 │   │   │   └── 789c371e46e8af51885e87f5ae6c2cf5b12d51
 │   │   ├── 81
 │   │   │   └── 340c7e72d5c852585d0faea06985a720d4c2df
 │   │   ├── 37
 │   │   │   └── 4808bdd64b167c234345a05a8e94fb0a79cf31
-│   │   ├── 93
-│   │   │   ├── 73b328c230c072e0cd1b8afd1187a49fb7c594
-│   │   │   └── 7bb05c0976e29ee2f9ca661beb52c97cf20485
 │   │   ├── f3
 │   │   │   └── 0a9bcff4c33f91bab0cf3d3cbd1803b7f8e8bd
 │   │   ├── a6
 │   │   │   └── 82eae88c50e0a470638e4eb838a742f84be58f
+│   │   ├── f6
+│   │   │   └── e8a7d6f90845ee5d4af80a139d2d4695d14db8
 │   │   ├── 7a
 │   │   │   └── 3eece57dd9b57a5f93f9fa8f05d256a8876d7b
+│   │   ├── 2f
+│   │   │   └── fc392fb76ef0223f8ffce2a02d14eacd2351e2
 │   │   ├── ed
 │   │   │   └── 34b76a4b6e27bf7fdaf69f139bac8ddcd1875b
+│   │   ├── 34
+│   │   │   └── d089ce91ffb5d3340eddcff018ed1c3aedf5b4
 │   │   ├── pack
 │   │   ├── 71
 │   │   │   └── 5dde02a154e818b07a5c7f14604e55dbdd9d93
@@ -152,7 +153,7 @@ workspace
 ├── dockerfile
 └── tree.out
 
-43 directories (0 symlink), 67 files (0 symlink)
+44 directories (0 symlink), 67 files (0 symlink)
 #################################################
 Generated: treehue_colored @2025 - © Jean Gomes -
 #################################################
