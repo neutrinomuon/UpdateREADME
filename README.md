@@ -25,7 +25,7 @@ RESUME: Automatically updates the README.md file with the latest version number 
 
 <pre>
 - name: Use custom action in update readme
-  uses: 'neutrinomuon/UpdateREADME@v0.0.3'  # Replace with the actual repository and version
+  uses: 'neutrinomuon/UpdateREADME@vmain'  # Replace with the actual repository and version
   with:
     TOKEN: ${{ secrets.TOKENACTION }}
     BRANCH: ${{ env.BRANCH }}
